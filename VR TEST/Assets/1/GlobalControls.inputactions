@@ -1,0 +1,66 @@
+{
+    "name": "GlobalControls",
+    "maps": [
+        {
+            "name": "Gun",
+            "id": "eaa17078-fed5-47d2-a1cc-c92c78801f40",
+            "actions": [
+                {
+                    "name": "ChangeGunUp",
+                    "type": "Value",
+                    "id": "b53ffd3d-4409-4462-a63b-8196d457c5c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeGunDown",
+                    "type": "Value",
+                    "id": "e48d536d-849f-41dc-a4d2-538c74f24bb6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d133f24-6b2d-4492-9bfc-d21d16a2285b",
+                    "path": "<XRController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ChangeGunUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1098e2e0-4ddd-4a55-964a-94dd85460e58",
+                    "path": "<XRController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Controller",
+                    "action": "ChangeGunDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "XR Controller",
+            "bindingGroup": "XR Controller",
+            "devices": [
+                {
+                    "devicePath": "<XRController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
