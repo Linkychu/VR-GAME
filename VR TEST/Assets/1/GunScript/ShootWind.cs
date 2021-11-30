@@ -6,15 +6,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 using CommonUsages = UnityEngine.XR.CommonUsages;
 using InputDevice = UnityEngine.XR.InputDevice;
 
-
 public class ShootWind : MonoBehaviour
 {
     // Start is called before the first frame update
 
     private Transform shootingTransform;
     private Vector3 shootingPos;
-    
+
+    private ActionBasedController Rcontroller;
+    private float speed = 20;
     private InputDevice targetDevice;
+    
+    private GlobalControls _controls;
 
     public GameObject windPrefab;
     void Start()
@@ -30,7 +33,9 @@ public class ShootWind : MonoBehaviour
         shootingPos = shootingTransform.transform.position;
         TryInitialize();
 
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        bool triggerValue;
+        if (targetDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) &&
+            triggerValue)
         {
             Shootwind();
         }
@@ -55,10 +60,14 @@ public class ShootWind : MonoBehaviour
 
     void Shootwind()
     {
-        var wind = Instantiate(windPrefab, shootingPos, Quaternion.identity);
         
-        Destroy(wind.gameObject, 10);
-        
+        RaycastHit somethingHit;
+        if (Physics.Raycast(shootingPos, Vector3.forward, out somethingHit, 1f))
+        {
+            var wind = Instantiate(windPrefab, shootingPos, Quaternion.identity);
+            Destroy(wind.gameObject, 10);
+        }
+
     }
     
 }
