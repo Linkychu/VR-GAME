@@ -44,6 +44,15 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""b089357c-aac6-41a9-b144-6df33009034c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,65 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                     ""action"": ""ChangeGunDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""704790cc-c6d8-4313-8618-750833da7b35"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""IceGun"",
+            ""id"": ""d4600843-f5dc-428f-9034-6e1f54481868"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f0322b1-7ab7-4b2a-8f91-8039256188ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShootIce"",
+                    ""type"": ""Button"",
+                    ""id"": ""847346b2-4d01-42a8-be60-08cdab4fc8a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b1d3e23a-5d0a-4841-a577-6beab4ccf75e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7be181ac-0382-4de3-b352-808b2de1d9d5"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootIce"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -90,6 +158,11 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
         m_Gun = asset.FindActionMap("Gun", throwIfNotFound: true);
         m_Gun_ChangeGunUp = m_Gun.FindAction("ChangeGunUp", throwIfNotFound: true);
         m_Gun_ChangeGunDown = m_Gun.FindAction("ChangeGunDown", throwIfNotFound: true);
+        m_Gun_Shoot = m_Gun.FindAction("Shoot", throwIfNotFound: true);
+        // IceGun
+        m_IceGun = asset.FindActionMap("IceGun", throwIfNotFound: true);
+        m_IceGun_Newaction = m_IceGun.FindAction("New action", throwIfNotFound: true);
+        m_IceGun_ShootIce = m_IceGun.FindAction("ShootIce", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -151,12 +224,14 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
     private IGunActions m_GunActionsCallbackInterface;
     private readonly InputAction m_Gun_ChangeGunUp;
     private readonly InputAction m_Gun_ChangeGunDown;
+    private readonly InputAction m_Gun_Shoot;
     public struct GunActions
     {
         private @GlobalControls m_Wrapper;
         public GunActions(@GlobalControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ChangeGunUp => m_Wrapper.m_Gun_ChangeGunUp;
         public InputAction @ChangeGunDown => m_Wrapper.m_Gun_ChangeGunDown;
+        public InputAction @Shoot => m_Wrapper.m_Gun_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Gun; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -172,6 +247,9 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                 @ChangeGunDown.started -= m_Wrapper.m_GunActionsCallbackInterface.OnChangeGunDown;
                 @ChangeGunDown.performed -= m_Wrapper.m_GunActionsCallbackInterface.OnChangeGunDown;
                 @ChangeGunDown.canceled -= m_Wrapper.m_GunActionsCallbackInterface.OnChangeGunDown;
+                @Shoot.started -= m_Wrapper.m_GunActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_GunActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_GunActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_GunActionsCallbackInterface = instance;
             if (instance != null)
@@ -182,10 +260,54 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                 @ChangeGunDown.started += instance.OnChangeGunDown;
                 @ChangeGunDown.performed += instance.OnChangeGunDown;
                 @ChangeGunDown.canceled += instance.OnChangeGunDown;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
     public GunActions @Gun => new GunActions(this);
+
+    // IceGun
+    private readonly InputActionMap m_IceGun;
+    private IIceGunActions m_IceGunActionsCallbackInterface;
+    private readonly InputAction m_IceGun_Newaction;
+    private readonly InputAction m_IceGun_ShootIce;
+    public struct IceGunActions
+    {
+        private @GlobalControls m_Wrapper;
+        public IceGunActions(@GlobalControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_IceGun_Newaction;
+        public InputAction @ShootIce => m_Wrapper.m_IceGun_ShootIce;
+        public InputActionMap Get() { return m_Wrapper.m_IceGun; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(IceGunActions set) { return set.Get(); }
+        public void SetCallbacks(IIceGunActions instance)
+        {
+            if (m_Wrapper.m_IceGunActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_IceGunActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_IceGunActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_IceGunActionsCallbackInterface.OnNewaction;
+                @ShootIce.started -= m_Wrapper.m_IceGunActionsCallbackInterface.OnShootIce;
+                @ShootIce.performed -= m_Wrapper.m_IceGunActionsCallbackInterface.OnShootIce;
+                @ShootIce.canceled -= m_Wrapper.m_IceGunActionsCallbackInterface.OnShootIce;
+            }
+            m_Wrapper.m_IceGunActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+                @ShootIce.started += instance.OnShootIce;
+                @ShootIce.performed += instance.OnShootIce;
+                @ShootIce.canceled += instance.OnShootIce;
+            }
+        }
+    }
+    public IceGunActions @IceGun => new IceGunActions(this);
     private int m_XRControllerSchemeIndex = -1;
     public InputControlScheme XRControllerScheme
     {
@@ -199,5 +321,11 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
     {
         void OnChangeGunUp(InputAction.CallbackContext context);
         void OnChangeGunDown(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+    }
+    public interface IIceGunActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
+        void OnShootIce(InputAction.CallbackContext context);
     }
 }

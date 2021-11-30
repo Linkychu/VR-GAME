@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -15,7 +16,13 @@ public class WindEffect : MonoBehaviour
     [SerializeField] public float explosionForce;
 
     public int Damage = 100;
+    private Rigidbody rb;
 
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
@@ -28,7 +35,7 @@ public class WindEffect : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, transform.rotation);
-        Destroy(instantiate, 2f);
+        Destroy(instantiate, 1f);
         WindExplosion();
         Destroy(gameObject);
         
@@ -42,7 +49,7 @@ public class WindEffect : MonoBehaviour
             Rigidbody HitRig = nearby.GetComponent<Rigidbody>();
             if (HitRig != null)
             {
-                HitRig.AddExplosionForce(explosionForce, transform.position, radius);
+                HitRig.AddExplosionForce(explosionForce, transform.position, radius , Random.Range(explosionForce/4 , explosionForce / 2));
             }
         }
         

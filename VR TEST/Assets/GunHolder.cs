@@ -12,12 +12,11 @@ public class GunHolder : MonoBehaviour
 {
 
     public bool Allowed;
-    public int selectedWeapon = 0;
 
     private bool PrimaryButtonPressed;
     private bool SecondaryButtonPressed;
 
-    private float buttonCount;
+    public float buttonCount;
     private float PrimaryInput;
 
 
@@ -72,7 +71,7 @@ public class GunHolder : MonoBehaviour
 
         PrimaryInputCheck();
         SecondaryInputCheck();
-       
+
     }
 
     void PrimaryInputCheck()

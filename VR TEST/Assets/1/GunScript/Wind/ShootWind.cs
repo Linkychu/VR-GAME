@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using CommonUsages = UnityEngine.XR.CommonUsages;
@@ -16,29 +17,33 @@ public class ShootWind : MonoBehaviour
     private ActionBasedController Rcontroller;
     private float speed = 20;
     private InputDevice targetDevice;
-    
     private GlobalControls _controls;
+    public float weaponNumber;
 
+    [SerializeField]private Transform origin;
+    private Vector3 origin2;
+    private Transform origin1;
+    [SerializeField]private InputAction _inputAction;
+    [SerializeField]private InputActionProperty shootActionReference;
     public GameObject windPrefab;
+    private GunHolder gunHolder;
     void Start()
     {
-         shootingTransform = GetComponentInChildren<Transform>();
         TryInitialize();
-        
+        shootActionReference.action.performed += Shootwind;
+        gunHolder = GetComponentInParent<GunHolder>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootingPos = shootingTransform.transform.position;
+        shootingPos = origin.transform.position;
+        origin1 = GetComponentInChildren<Transform>();
+        origin2 = origin1.transform.position;
         TryInitialize();
 
-        bool triggerValue;
-        if (targetDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) &&
-            triggerValue)
-        {
-            Shootwind();
-        }
+      
     }
 
     void TryInitialize()
@@ -58,14 +63,19 @@ public class ShootWind : MonoBehaviour
         }
     }
 
-    void Shootwind()
+    void Shootwind(InputAction.CallbackContext context)
     {
         
+        Debug.Log(shootingPos);
         RaycastHit somethingHit;
-        if (Physics.Raycast(shootingPos, Vector3.forward, out somethingHit, 1f))
+        if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
         {
-            var wind = Instantiate(windPrefab, shootingPos, Quaternion.identity);
-            Destroy(wind.gameObject, 10);
+            weaponNumber = gunHolder.buttonCount;
+            if (weaponNumber == 0)
+            {
+                var wind = Instantiate(windPrefab, origin2, origin.transform.rotation);
+                Destroy(wind.gameObject, 10);
+            }
         }
 
     }

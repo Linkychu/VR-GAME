@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "b089357c-aac6-41a9-b144-6df33009034c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -44,6 +53,65 @@
                     "processors": "",
                     "groups": "XR Controller",
                     "action": "ChangeGunDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "704790cc-c6d8-4313-8618-750833da7b35",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "IceGun",
+            "id": "d4600843-f5dc-428f-9034-6e1f54481868",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "3f0322b1-7ab7-4b2a-8f91-8039256188ba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShootIce",
+                    "type": "Button",
+                    "id": "847346b2-4d01-42a8-be60-08cdab4fc8a0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b1d3e23a-5d0a-4841-a577-6beab4ccf75e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7be181ac-0382-4de3-b352-808b2de1d9d5",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootIce",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

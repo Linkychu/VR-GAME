@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask Ground;
     private float radius;
 
-    private bool isGrounded => //Physics.CheckSphere(transform.position, radius, Ground);
+    private bool isGrounded => 
     Physics.Raycast(new Vector2(transform.position.x, transform.position.y + 2.0f), Vector3.down, 2.0f, Ground);
     void Start()
     {
