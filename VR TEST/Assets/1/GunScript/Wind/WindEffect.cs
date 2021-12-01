@@ -38,7 +38,7 @@ public class WindEffect : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         cubes = other.gameObject.GetComponent<CubesWind>();
-        GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, Quaternion.identity);
+        GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, transform.rotation);
         Destroy(instantiate, 1f);
         WindExplosion();
         Destroy(gameObject);

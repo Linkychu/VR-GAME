@@ -38,8 +38,7 @@ public class IceEffect : MonoBehaviour
                 objectCol = other.gameObject.GetComponent<Collider>();
                 objectRb.constraints = RigidbodyConstraints.FreezeAll;
 
-                GameObject InstantiatedIce = Instantiate(iceBlock, other.transform.position + new Vector3(0, 0.1f, 0),
-                    Quaternion.identity);
+                GameObject InstantiatedIce = Instantiate(iceBlock, other.transform.position + new Vector3(0, 0.1f, 0), transform.rotation);
                 _iceBlock = InstantiatedIce.GetComponent<IceBlock>();
                 InstantiatedIce.transform.localScale = 1.1f * objectTransform.localScale;
 
