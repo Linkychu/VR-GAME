@@ -55,7 +55,7 @@ public class ShootWind : MonoBehaviour
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
         foreach (var device in inputDevices)
         {
-            Debug.Log(device.name + device.characteristics);
+            
         }
 
         if (inputDevices.Count > 0)
@@ -72,13 +72,7 @@ public class ShootWind : MonoBehaviour
         
         if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
         {
-             EnemyToggle enemyToggle = somethingHit.transform.GetComponent<EnemyToggle>();
-
-             Debug.Log(somethingHit.transform.name);
-             if (enemyToggle != null)
-             {
-                 enemyToggle.Enable();
-             }
+             
              
             
              weaponNumber = gunHolder.buttonCount;

@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.InputSystem;
-using InputDevice = UnityEngine.XR.InputDevice;
 
 
 public class ShootElectricity : MonoBehaviour
@@ -45,6 +43,7 @@ public class ShootElectricity : MonoBehaviour
         origin1 = GetComponentInChildren<Transform>();
         origin2 = origin1.transform.position;
         TryInitialize();
+        
         shootActionReference.action.performed += Shootelectricity;
 
 
@@ -69,9 +68,10 @@ public class ShootElectricity : MonoBehaviour
 
     void Shootelectricity(InputAction.CallbackContext context)
     {
-        RaycastHit hit;
-    
-        if(Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out hit, 1f))
+        RaycastHit raycastHit;
+
+        if(Physics.Raycast(shootingPos, origin.position ,  out raycastHit, 1f))
+            Debug.Log(shootingPos);
         {
             Debug.Log("True");
             weaponNumber = gunHolder.buttonCount;
@@ -79,7 +79,7 @@ public class ShootElectricity : MonoBehaviour
             if (weaponNumber == 2)
             {
                 Debug.Log("working");
-                var electricity = Instantiate(electricityPrefab, origin2, origin.transform.rotation);
+                var electricity = Instantiate(electricityPrefab, origin.transform.position, origin.rotation);
                 
                 
                 Destroy(electricity.gameObject, 10);

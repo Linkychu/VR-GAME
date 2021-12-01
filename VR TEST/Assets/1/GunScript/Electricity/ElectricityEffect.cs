@@ -12,6 +12,7 @@ public class ElectricityEffect : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] public float explosionForce;
     [SerializeField] private GameObject electricityExplosion;
+    public bool Player;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,15 +22,20 @@ public class ElectricityEffect : MonoBehaviour
     void Update()
     {
         transform.position +=  (transform.forward + new Vector3(0, 0, speed) * Time.deltaTime);
+
+        Debug.Log("SpherePos: " + transform.position);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        Rigidbody objectRb = other.gameObject.GetComponent<Rigidbody>();
-        GameObject instantiate = Instantiate(electricityExplosion, transform.position, Quaternion.identity);
-        Destroy(instantiate, 1f);
-        ElectricityExplosion();
-        Destroy(gameObject);
+     
+            Rigidbody objectRb = other.gameObject.GetComponent<Rigidbody>();
+           
+            GameObject instantiate = Instantiate(electricityExplosion, transform.position, transform.rotation);
+            Destroy(instantiate, 1f);
+            ElectricityExplosion();
+            Destroy(gameObject);
+     
     }
 
     private void ElectricityExplosion()

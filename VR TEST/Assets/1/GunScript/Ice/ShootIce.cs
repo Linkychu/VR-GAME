@@ -55,7 +55,7 @@ public class ShootIce : MonoBehaviour
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
         foreach (var device in inputDevices)
         {
-            Debug.Log(device.name + device.characteristics);
+           
         }
 
         if (inputDevices.Count > 0)
