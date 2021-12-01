@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
-using InputDevice = UnityEngine.InputSystem.InputDevice;
+using InputDevice = UnityEngine.XR.InputDevice;
 
 
 public class ShootElectricity : MonoBehaviour
 {
-    
+
     // Start is called before the first frame update
 
     private Transform shootingTransform;
@@ -22,17 +22,18 @@ public class ShootElectricity : MonoBehaviour
     private GlobalControls _controls;
     public float weaponNumber;
 
-    [SerializeField]private Transform origin;
+    [SerializeField] private Transform origin;
     private Vector3 origin2;
     private Transform origin1;
-    [SerializeField]private InputAction _inputAction;
-    [SerializeField]private InputActionProperty shootActionReference;
+    [SerializeField] private InputAction _inputAction;
+    [SerializeField] private InputActionProperty shootActionReference;
     public GameObject electricityPrefab;
     private GunHolder gunHolder;
+
     void Start()
     {
         TryInitialize();
-    
+
         gunHolder = GetComponentInParent<GunHolder>();
 
     }
@@ -46,7 +47,7 @@ public class ShootElectricity : MonoBehaviour
         TryInitialize();
         shootActionReference.action.performed += Shootelectricity;
 
-      
+
     }
 
     void TryInitialize()
@@ -68,24 +69,16 @@ public class ShootElectricity : MonoBehaviour
 
     void Shootelectricity(InputAction.CallbackContext context)
     {
-        
-        Debug.Log(shootingPos);
-        RaycastHit somethingHit;
-        
-        if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
+        RaycastHit hit;
+    
+        if(Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out hit, 1f))
         {
-             EnemyToggle enemyToggle = somethingHit.transform.GetComponent<EnemyToggle>();
-
-             Debug.Log(somethingHit.transform.name);
-             if (enemyToggle != null)
-             {
-                 enemyToggle.Enable();
-             }
-             
-            
-             weaponNumber = gunHolder.buttonCount;
+            Debug.Log("True");
+            weaponNumber = gunHolder.buttonCount;
+                
             if (weaponNumber == 2)
             {
+                Debug.Log("working");
                 var electricity = Instantiate(electricityPrefab, origin2, origin.transform.rotation);
                 
                 
@@ -93,6 +86,7 @@ public class ShootElectricity : MonoBehaviour
                 
             }
         }
+        
 
     }
 }
