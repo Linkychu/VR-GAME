@@ -21,6 +21,11 @@ public class Health : MonoBehaviour
         {
             StartCoroutine(Invisibility());
         }
+
+      if (playerHealth < 0)
+      {
+          Destroy(gameObject);
+      }
     }
 
     public void DealDamage(int damage)

@@ -12,18 +12,28 @@ public class CubesWind : MonoBehaviour
 
     private Rigidbody objectRigidbody;
 
+    private CubeHealth _cubeHealth;
+
+    [SerializeField] private float damage = 500;
+
     // Start is called before the first frame update
     void Start()
     {
         objectRigidbody = GetComponent<Rigidbody>();
         objectNavMesh = GetComponent<NavMeshAgent>();
         _cubesAI = GetComponent<CubesAI>();
+        _cubeHealth = GetComponent<CubeHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        _cubeHealth.WindDamage(damage);
     }
 
     public void WindPhysics()

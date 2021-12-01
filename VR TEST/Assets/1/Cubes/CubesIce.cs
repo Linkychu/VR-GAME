@@ -10,10 +10,14 @@ public class CubesIce : MonoBehaviour
     private Rigidbody rb;
     private BoxCollider boxCollider;
     private Transform objectTrans;
+    [SerializeField]private CubesIce cubesIce;
+    [SerializeField] private CubeHealth cubeHealth;
+    [SerializeField] private float dps = 50;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         boxCollider = gameObject.GetComponent<BoxCollider>();
+        cubeHealth = GetComponent<CubeHealth>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class CubesIce : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
         boxCollider.size = new Vector3(objectTrans.localScale.x, objectTrans.localScale.y, objectTrans.localScale.z);
+        cubeHealth.IceDamage(dps);
         StartCoroutine(IceWait());
 
     }
