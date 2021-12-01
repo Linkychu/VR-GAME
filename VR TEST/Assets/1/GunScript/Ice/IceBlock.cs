@@ -19,7 +19,16 @@ public class IceBlock : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<Collider>();
+        StartCoroutine(Timer());
         Destroy(gameObject, 10);
+        
+        
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(9.9f);
+
     }
 
     private void Update()

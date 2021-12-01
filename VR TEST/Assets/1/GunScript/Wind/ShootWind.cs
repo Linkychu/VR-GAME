@@ -30,7 +30,7 @@ public class ShootWind : MonoBehaviour
     void Start()
     {
         TryInitialize();
-        shootActionReference.action.performed += Shootwind;
+    
         gunHolder = GetComponentInParent<GunHolder>();
 
     }
@@ -42,6 +42,7 @@ public class ShootWind : MonoBehaviour
         origin1 = GetComponentInChildren<Transform>();
         origin2 = origin1.transform.position;
         TryInitialize();
+        shootActionReference.action.performed += Shootwind;
 
       
     }
@@ -68,13 +69,26 @@ public class ShootWind : MonoBehaviour
         
         Debug.Log(shootingPos);
         RaycastHit somethingHit;
+        
         if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
         {
-            weaponNumber = gunHolder.buttonCount;
+             EnemyToggle enemyToggle = somethingHit.transform.GetComponent<EnemyToggle>();
+
+             Debug.Log(somethingHit.transform.name);
+             if (enemyToggle != null)
+             {
+                 enemyToggle.Enable();
+             }
+             
+            
+             weaponNumber = gunHolder.buttonCount;
             if (weaponNumber == 0)
             {
                 var wind = Instantiate(windPrefab, origin2, origin.transform.rotation);
+                
+                
                 Destroy(wind.gameObject, 10);
+                
             }
         }
 
