@@ -17,11 +17,23 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      if(gameObject.layer == 12)
+        {
+            StartCoroutine(Invisibility());
+        }
     }
 
     public void DealDamage(int damage)
     {
         playerHealth -= damage;
     }
+
+    IEnumerator Invisibility()
+    {
+        yield return new WaitForSeconds(4);
+        //do some cool effects
+        gameObject.layer = 6;
+    }
+
+    
 }
