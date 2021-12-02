@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -25,7 +26,7 @@ public class ShootWind : MonoBehaviour
     private Transform origin1;
     [SerializeField]private InputAction _inputAction;
     [SerializeField]private InputActionProperty shootActionReference;
-    public GameObject windPrefab;
+    public Rigidbody windPrefab;
     private GunHolder gunHolder;
     void Start()
     {
@@ -67,24 +68,44 @@ public class ShootWind : MonoBehaviour
     void Shootwind(InputAction.CallbackContext context)
     {
         
-        Debug.Log(shootingPos);
-        RaycastHit somethingHit;
-        
-        if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
-        {
-             
-             
+        // Debug.Log(shootingPos);
+        // RaycastHit somethingHit;
+        //
+        // if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
+        // {
+        //      
+        //      
             
              weaponNumber = gunHolder.buttonCount;
             if (weaponNumber == 0)
             {
-                var wind = Instantiate(windPrefab, origin2, origin.transform.rotation);
                 
+                Rigidbody wind = Instantiate(windPrefab, origin.transform.position, Quaternion.identity);
+                wind.velocity = transform.TransformDirection(Vector3.up * 20);
                 
-                Destroy(wind.gameObject, 10);
+                RaycastHit somethingHit;
+                if (Physics.Raycast(shootingPos, Vector3.forward, out somethingHit, 1f))
+                {
+                    Debug.Log(somethingHit.transform.name);
+                    Transform Cube = somethingHit.transform.GetComponent<Transform>();
+                  
+                    NavMeshAgent cubeAI = Cube.gameObject.GetComponent<NavMeshAgent>();
+                    Rigidbody cubeRb = Cube.gameObject.GetComponent<Rigidbody>();
+
+                    cubeAI.isStopped = true;
+                    cubeRb.isKinematic = false;
+                    
+                    Destroy(wind.gameObject, 10);
+                }
+
+                else
+                {
+                    Destroy(wind.gameObject, 10);
+                }
+               
                 
             }
-        }
+    //}
 
     }
     

@@ -27,10 +27,11 @@ public class CubesAI : MonoBehaviour
     public float timeBetweenAttacks;
     public bool alreadyAttacked;
     public int health = 200;
-    
+
 
     [Header("States")] 
-    public float sightRange, attackRange;
+    public float sightRange;
+    public float attackRange;
     public bool playerInSightRange, playerInAttackRange;
     
 

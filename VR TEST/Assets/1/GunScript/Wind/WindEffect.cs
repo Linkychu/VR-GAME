@@ -27,22 +27,22 @@ public class WindEffect : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        transform.position +=  (transform.forward + new Vector3(0, 0, speed) * Time.deltaTime);
-    }
-
+    
 
     // Update is called once per frame
 
     private void OnCollisionEnter(Collision other)
     {
-        cubes = other.gameObject.GetComponent<CubesWind>();
-        GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, transform.rotation);
-        Destroy(instantiate, 1f);
-        WindExplosion();
-        Destroy(gameObject);
-        
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, Quaternion.identity);
+            Destroy(instantiate, 1f);
+            //CubesWind cubesWind = other.gameObject.GetComponent<CubesWind>();
+            //cubesWind.WindPhysics();
+            WindExplosion();
+            Destroy(gameObject);
+        }
+
     }
 
     private void WindExplosion()

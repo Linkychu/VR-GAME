@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CubesElectricity : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CubesElectricity : MonoBehaviour
     [SerializeField] private float damage = 100;
     // Start is called before the first frame update
 
+    private NavMeshAgent cubeAI;
     private CubeHealth _cubeHealth;
     void Start()
     {
@@ -24,6 +26,7 @@ public class CubesElectricity : MonoBehaviour
         initialColour = GetComponent<Renderer>().material.color;
 
 
+        cubeAI = GetComponent<NavMeshAgent>();
         _cubeHealth = GetComponent<CubeHealth>();
 
 
@@ -41,17 +44,20 @@ public class CubesElectricity : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Electricity"))
         {
+            cubeAI.isStopped = true;
+            rb.isKinematic = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
             _renderer.material.color = Color.yellow;
-            _cubeHealth.ElectricDamage(damage);
             StartCoroutine(ShockTimer());
         }
     }
 
     IEnumerator ShockTimer()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6);
         rb.constraints = RigidbodyConstraints.None;
+        rb.isKinematic = true;
+        cubeAI.isStopped = false;
         _renderer.material.color = initialColour;
     }
 }

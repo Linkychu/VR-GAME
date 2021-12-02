@@ -138,6 +138,45 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Global"",
+            ""id"": ""eebcfafb-e26b-4845-af6b-4668271216fe"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""b589def8-e123-459e-a0a7-88eab3f0ff4f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eadec116-c19c-4415-8e8c-dee30d0b4a1c"",
+                    ""path"": ""<XRController>{RightHand}/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eee04be8-3d4b-4dec-a54d-fc42e3b34bea"",
+                    ""path"": ""<XRController>{LeftHand}/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -163,6 +202,9 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
         m_IceGun = asset.FindActionMap("IceGun", throwIfNotFound: true);
         m_IceGun_Newaction = m_IceGun.FindAction("New action", throwIfNotFound: true);
         m_IceGun_ShootIce = m_IceGun.FindAction("ShootIce", throwIfNotFound: true);
+        // Global
+        m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
+        m_Global_Pause = m_Global.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,6 +350,39 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
         }
     }
     public IceGunActions @IceGun => new IceGunActions(this);
+
+    // Global
+    private readonly InputActionMap m_Global;
+    private IGlobalActions m_GlobalActionsCallbackInterface;
+    private readonly InputAction m_Global_Pause;
+    public struct GlobalActions
+    {
+        private @GlobalControls m_Wrapper;
+        public GlobalActions(@GlobalControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Global_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Global; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GlobalActions set) { return set.Get(); }
+        public void SetCallbacks(IGlobalActions instance)
+        {
+            if (m_Wrapper.m_GlobalActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_GlobalActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GlobalActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GlobalActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_GlobalActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public GlobalActions @Global => new GlobalActions(this);
     private int m_XRControllerSchemeIndex = -1;
     public InputControlScheme XRControllerScheme
     {
@@ -327,5 +402,9 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
     {
         void OnNewaction(InputAction.CallbackContext context);
         void OnShootIce(InputAction.CallbackContext context);
+    }
+    public interface IGlobalActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -25,7 +25,7 @@ public class ShootElectricity : MonoBehaviour
     private Transform origin1;
     [SerializeField] private InputAction _inputAction;
     [SerializeField] private InputActionProperty shootActionReference;
-    public GameObject electricityPrefab;
+    public Rigidbody electricityPrefab;
     private GunHolder gunHolder;
 
     void Start()
@@ -68,24 +68,24 @@ public class ShootElectricity : MonoBehaviour
 
     void Shootelectricity(InputAction.CallbackContext context)
     {
-        RaycastHit raycastHit;
+        //RaycastHit raycastHit;
 
-        if(Physics.Raycast(shootingPos, origin.position ,  out raycastHit, 1f))
-            Debug.Log(shootingPos);
-        {
-            Debug.Log("True");
-            weaponNumber = gunHolder.buttonCount;
+        // if(Physics.Raycast(shootingPos, transform.forward ,  out raycastHit, 1f))
+        // {
+        weaponNumber = gunHolder.buttonCount;
                 
             if (weaponNumber == 2)
             {
                 Debug.Log("working");
-                var electricity = Instantiate(electricityPrefab, origin.transform.position, origin.rotation);
+                Rigidbody electricity;
+                electricity = Instantiate(electricityPrefab, origin.transform.position, origin.transform.rotation);
+                electricity.velocity = transform.TransformDirection(Vector3.forward * 90);
                 
                 
-                Destroy(electricity.gameObject, 10);
+                Destroy(electricity.gameObject, 2);
                 
             }
-        }
+        //}
         
 
     }

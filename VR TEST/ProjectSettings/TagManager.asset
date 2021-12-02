@@ -8,6 +8,9 @@ TagManager:
   - Wind
   - Ice
   - Electricity
+  - Enemy
+  - IceBlock
+  - Health
   layers:
   - Default
   - TransparentFX

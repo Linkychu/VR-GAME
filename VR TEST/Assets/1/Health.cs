@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
 
     public int playerHealth = 100;
     public int Armour;
+    private int Playerdamage = 10;
     void Start()
     {
         
@@ -31,6 +32,15 @@ public class Health : MonoBehaviour
     public void DealDamage(int damage)
     {
         playerHealth -= damage;
+        gameObject.layer = 12;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            DealDamage(Playerdamage);
+        }
     }
 
     IEnumerator Invisibility()
@@ -40,5 +50,18 @@ public class Health : MonoBehaviour
         gameObject.layer = 6;
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Health"))
+        {
+            HealDamage(100);
+            Destroy(other);
+        }
+        
+    }
+
+    public void HealDamage(int HealAmt)
+    {
+       playerHealth += HealAmt;
+    }
 }

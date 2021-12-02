@@ -23,7 +23,7 @@ public class ShootIce : MonoBehaviour
      private Transform origin1;
     [SerializeField]private InputAction _inputAction;
     [SerializeField]private InputActionProperty shootActionReference;
-    public GameObject icePrefab;
+    public Rigidbody icePrefab;
     private GunHolder gunHolder;
   
     void Start()
@@ -67,17 +67,13 @@ public class ShootIce : MonoBehaviour
     void Shootice(InputAction.CallbackContext context)
     {
         
-        Debug.Log(shootingPos);
-        RaycastHit somethingHit;
-        if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
-        {
-            weaponNumber = gunHolder.buttonCount;
+        weaponNumber = gunHolder.buttonCount;
             if (weaponNumber == 1)
             {
-                var ice = Instantiate(icePrefab, origin2, origin.transform.rotation);
-                Destroy(ice.gameObject, 10);
+                Rigidbody ice = Instantiate(icePrefab, origin2, origin.transform.rotation);
+                ice.velocity = transform.TransformDirection(Vector3.up * 20);
+                Destroy(ice.gameObject, 2);
             }
-        }
 
     }
     

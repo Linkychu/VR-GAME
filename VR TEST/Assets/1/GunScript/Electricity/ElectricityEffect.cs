@@ -13,22 +13,19 @@ public class ElectricityEffect : MonoBehaviour
     [SerializeField] public float explosionForce;
     [SerializeField] private GameObject electricityExplosion;
     public bool Player;
+    private Collider _collider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        transform.position +=  (transform.forward + new Vector3(0, 0, speed) * Time.deltaTime);
-
-        Debug.Log("SpherePos: " + transform.position);
-    }
-
     private void OnCollisionEnter(Collision other)
     {
      
+        Debug.Log("Collider name: " + other.collider);
             Rigidbody objectRb = other.gameObject.GetComponent<Rigidbody>();
            
             GameObject instantiate = Instantiate(electricityExplosion, transform.position, transform.rotation);

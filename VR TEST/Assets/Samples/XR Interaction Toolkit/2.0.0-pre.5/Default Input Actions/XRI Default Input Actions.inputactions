@@ -1096,7 +1096,7 @@
                 {
                     "name": "",
                     "id": "6b0c194a-0376-4a6b-ba35-2bf1a6ab5814",
-                    "path": "<XRController>{RightHand}/primaryButton",
+                    "path": "<XRController>{RightHand}/joystickClicked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

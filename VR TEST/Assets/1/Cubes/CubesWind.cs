@@ -3,26 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class CubesWind : MonoBehaviour
 {
     private NavMeshAgent objectNavMesh;
 
-    private CubesAI _cubesAI;
+    private NavMeshAgent _cubesAI;
 
     private Rigidbody objectRigidbody;
 
     private CubeHealth _cubeHealth;
 
+    private bool hasBeenHit = false;
     [SerializeField] private float damage = 500;
+    [SerializeField] private float explosionForce;
+    [SerializeField] private float explosionRadius;
 
     // Start is called before the first frame update
     void Start()
     {
         objectRigidbody = GetComponent<Rigidbody>();
         objectNavMesh = GetComponent<NavMeshAgent>();
-        _cubesAI = GetComponent<CubesAI>();
         _cubeHealth = GetComponent<CubeHealth>();
+        
     }
 
     // Update is called once per frame
@@ -33,27 +37,44 @@ public class CubesWind : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        _cubeHealth.WindDamage(damage);
+        if (other.gameObject.CompareTag("Wind"))
+        {
+            WindPhysics();
+        }
+
+        if (hasBeenHit == true)
+        {
+            WindPhysics2();
+        }
     }
 
     public void WindPhysics()
     {
-        
-        Debug.Log("Works");
-        _cubesAI.enabled = false;
-        objectNavMesh.enabled = false;
+        //_cubeHealth.WindDamage(damage);
+        objectNavMesh.isStopped = true;
         objectRigidbody.isKinematic = false;
-        StartCoroutine(Reenabled());
-           
+        objectRigidbody.constraints = RigidbodyConstraints.None;
+
+        WindForce();
         
+
     }
 
-    public IEnumerator Reenabled()
+    //IEnumerator Reenabled()
 
+    public void WindPhysics2()
     {
-        yield return new WaitForSeconds(3f);
-        _cubesAI.enabled = true;
-        objectNavMesh.enabled = true;
+        //yield return new WaitForSeconds(3f); 
+        objectNavMesh.isStopped = false;
         objectRigidbody.isKinematic = true;
+        hasBeenHit = false;
+
+
+    }
+
+    public void WindForce()
+    {
+        objectRigidbody.AddForce(0, explosionForce/16, 0);
+        hasBeenHit = true;
     }
 }
