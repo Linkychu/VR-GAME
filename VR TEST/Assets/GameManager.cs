@@ -40,13 +40,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numberofenemies < 1)
+        if (Enemies.Length < 1)
         {
             SpawnEnemies();
         }
 
         StartCoroutine(SpawnHealth());
         SpawnCoords();
+        CheckForEnemies();
     }
 
     void SpawnCoords()
@@ -69,15 +70,15 @@ public class GameManager : MonoBehaviour
 
     private void SpawnEnemies()
     {
-       
+       Debug.Log("Getting Activated");
             for (int i = 0; i < 10; i++)
             {
                 GameObject EnemiesWave = Instantiate(WavePrefab, spawnCoords, Quaternion.identity);
                 EnemiesWave.SetActive(true);
                 CheckForEnemies();
             
-        }
-    }
+        }   
+            }
 
     void CheckForEnemies()
     {

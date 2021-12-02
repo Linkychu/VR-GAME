@@ -582,11 +582,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119592065}
   m_CullTransparentMesh: 1
---- !u!1 &135756027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a97da33f506743140bba5d7a279179ed, type: 3}
-  m_PrefabInstance: {fileID: 676406412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &135756028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a97da33f506743140bba5d7a279179ed, type: 3}
@@ -4185,8 +4180,6 @@ MonoBehaviour:
   gun1: {fileID: 1170304552}
   gun2: {fileID: 1351439804}
   gun3: {fileID: 1651172877}
-  gun4: {fileID: 1117045932}
-  gun5: {fileID: 135756027}
   GlobalController: {fileID: 1611848096}
 --- !u!1 &659926020 stripped
 GameObject:
@@ -5172,6 +5165,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740822624}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &757798689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757798691}
+  - component: {fileID: 757798690}
+  m_Layer: 0
+  m_Name: Quit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &757798690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757798689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce3c7c281477e04794a4b00a267ebd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &757798691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757798689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764854442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,11 +6829,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891541620}
   m_CullTransparentMesh: 1
---- !u!1 &944288182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a97da33f506743140bba5d7a279179ed, type: 3}
-  m_PrefabInstance: {fileID: 1192828522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &944288183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a97da33f506743140bba5d7a279179ed, type: 3}
@@ -8465,8 +8496,6 @@ MonoBehaviour:
   gun1: {fileID: 1254532246}
   gun2: {fileID: 659926020}
   gun3: {fileID: 767292866}
-  gun4: {fileID: 8687345543741302436}
-  gun5: {fileID: 944288182}
   GlobalController: {fileID: 1611848096}
 --- !u!1 &1350349713
 GameObject:
@@ -9067,7 +9096,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1443900760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 757798690}
+        m_TargetAssemblyTypeName: Quit, Assembly-CSharp
+        m_MethodName: QuitApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1443900760
 MonoBehaviour:
   m_ObjectHideFlags: 0
