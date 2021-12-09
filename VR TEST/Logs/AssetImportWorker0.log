@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.18f1 (a7d1c678663c) revision 10998214'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 22000.318; Version 2009; 64bit' Language: 'en' Physical Memory: 16251 MB
+OS: 'Windows 10 Home; OS build 19042.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 16271 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -11,80 +11,80 @@ C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/olayi/Documents/Github/VR Game/VR-GAME/VR TEST
+C:/Users/user/Documents/GitHub/VR-GAME/VR TEST
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54982
-Successfully changed project path to: C:/Users/olayi/Documents/Github/VR Game/VR-GAME/VR TEST
-C:/Users/olayi/Documents/Github/VR Game/VR-GAME/VR TEST
+63076
+Successfully changed project path to: C:/Users/user/Documents/GitHub/VR-GAME/VR TEST
+C:/Users/user/Documents/GitHub/VR-GAME/VR TEST
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 140.94 ms, found 11 plugins.
-Preloading 1 native plugins for Editor in 1.31 ms.
+Refreshing native plugins compatible for Editor in 195.62 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 1.36 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/olayi/Documents/Github/VR Game/VR-GAME/VR TEST/Assets
+[Subsystems] Discovering subsystems at path C:/Users/user/Documents/GitHub/VR-GAME/VR TEST/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
     Vendor:   
-    VRAM:     5991 MB
+    VRAM:     2988 MB
     Driver:   30.0.14.9709
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56848
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001900 seconds.
+Registered in 0.003355 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 105.16 ms, found 11 plugins.
+Refreshing native plugins compatible for Editor in 108.02 ms, found 11 plugins.
 Preloading 1 native plugins for Editor in 0.11 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.758 seconds
+- Completed reload, in 12.116 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2758ms)
-		BeginReloadAssembly (71ms)
+	ReloadAssembly (12116ms)
+		BeginReloadAssembly (239ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (742ms)
-			LoadAssemblies (68ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (838ms)
+			LoadAssemblies (231ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (270ms)
+			SetupTypeCache (238ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (306ms)
+			RebuildScriptCaches (105ms)
+			SetupLoadedEditorAssemblies (353ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (105ms)
-				BeforeProcessingInitializeOnLoad (22ms)
-				ProcessInitializeOnLoadAttributes (127ms)
-				ProcessInitializeOnLoadMethodAttributes (45ms)
+				RefreshPlugins (108ms)
+				BeforeProcessingInitializeOnLoad (30ms)
+				ProcessInitializeOnLoadAttributes (166ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.017029 seconds.
+Registered in 0.023286 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 97.34 ms, found 11 plugins.
+Refreshing native plugins compatible for Editor in 100.67 ms, found 11 plugins.
 Preloading 1 native plugins for Editor in 0.12 ms.
 [XR] OculusXRPlugin: registering subsystems
 [XR] Unable to register display lifecyle provider: [1]
 [XR] Oculus Input lifecycle provider registered.
 [XR] Unable to register input lifecyle provider: [1]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\olayi\Documents\Github\VR Game\VR-GAME\VR TEST\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\olayi\Documents\Github\VR Game\VR-GAME\VR TEST\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:235 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\user\Documents\GitHub\VR-GAME\VR TEST\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:250 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\user\Documents\GitHub\VR-GAME\VR TEST\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:235 
   at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)
   at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00032] in <695d1cc93cca45069c528c15c9fdd749>:0 
    --- End of inner exception stack trace ---
@@ -98,45 +98,45 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  2.315 seconds
+- Completed reload, in  3.593 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2317ms)
-		BeginReloadAssembly (206ms)
+	ReloadAssembly (3595ms)
+		BeginReloadAssembly (255ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (15ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (26ms)
-		EndReloadAssembly (2012ms)
-			LoadAssemblies (144ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (3213ms)
+			LoadAssemblies (182ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (569ms)
+			SetupTypeCache (674ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (968ms)
+			RebuildScriptCaches (107ms)
+			SetupLoadedEditorAssemblies (1864ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (98ms)
-				BeforeProcessingInitializeOnLoad (139ms)
-				ProcessInitializeOnLoadAttributes (692ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				RefreshPlugins (101ms)
+				BeforeProcessingInitializeOnLoad (686ms)
+				ProcessInitializeOnLoadAttributes (962ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
+				AfterProcessingInitializeOnLoad (42ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 1.18 ms, found 11 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 0.99 ms, found 11 plugins.
 Preloading 1 native plugins for Editor in 0.11 ms.
 Unloading 2580 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 152.5 MB.
-System memory in use after: 152.3 MB.
+System memory in use before: 150.8 MB.
+System memory in use after: 150.6 MB.
 
-Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 3119.
-Total: 5.799600 ms (FindLiveObjects: 0.551700 ms CreateObjectMapping: 0.456400 ms MarkObjects: 4.309400 ms  DeleteObjects: 0.480600 ms)
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 3105.
+Total: 11.074500 ms (FindLiveObjects: 0.491500 ms CreateObjectMapping: 0.222200 ms MarkObjects: 9.951100 ms  DeleteObjects: 0.407900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -150,96 +150,113 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Skybox-Rainy/SunnyBack.png
-  artifactKey: Guid(6e155568c295d954bbe8b051681371a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyBack.png using Guid(6e155568c295d954bbe8b051681371a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2e4f6f7503f8b40179e8a1be7d197b') in 0.163394 seconds 
-  Import took 0.171376 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/Skybox-Rainy/SunnyLeft.png
-  artifactKey: Guid(394bb61e0e41ef5418a31c11bc398927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyLeft.png using Guid(394bb61e0e41ef5418a31c11bc398927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3608e068477f26f1d65177a8ecd8cc19') in 0.024800 seconds 
-  Import took 0.032662 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Skybox-Rainy/SunnyFront.png
-  artifactKey: Guid(4af870bc0c4e68a4d8811d967b1587d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyFront.png using Guid(4af870bc0c4e68a4d8811d967b1587d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6c8c2b8416eeeb841d158e44998a3fa') in 0.027471 seconds 
-  Import took 0.033896 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Skybox-Rainy/SunnyTop.png
-  artifactKey: Guid(357c06e3245d40142ad79dc7cfe08991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyTop.png using Guid(357c06e3245d40142ad79dc7cfe08991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae9c145884698837f85066c592b0b033') in 0.027346 seconds 
-  Import took 0.033529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Skybox-Rainy/SunnyRight.png
-  artifactKey: Guid(2925086c1e0454547a7611a90741c9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyRight.png using Guid(2925086c1e0454547a7611a90741c9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a46f0020f9f4f61c492a749ad2743977') in 0.027452 seconds 
-  Import took 0.034106 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Skybox-Rainy/SunnyBottom.png
-  artifactKey: Guid(2c3de3c9c5bb5904ab676511c4a8537c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/SunnyBottom.png using Guid(2c3de3c9c5bb5904ab676511c4a8537c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ca168199a2d52ec7d689eacdd04e527') in 0.029378 seconds 
-  Import took 0.036987 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 248.839689 seconds.
-  path: Assets/Skybox-Rainy/Skybox 1.mat
-  artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Skybox 1.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '952fe1323cc753921406ac4b7ac15629') in 0.119409 seconds 
-  Import took 0.127563 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.078637 seconds.
   path: Assets/Skybox-Rainy/Rainy Skybox.mat
   artifactKey: Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Rainy Skybox.mat using Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9480fdb714c3255daf371d9fb06a82da') in 0.251977 seconds 
-  Import took 0.344783 seconds .
+Start importing Assets/Skybox-Rainy/Rainy Skybox.mat using Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '135a8b693f7f047bc2447a4476bbc573') in 0.613311 seconds 
+  Import took 0.619038 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.241505 seconds.
-  path: Assets/Skybox-Rainy/Sunny Skybix.mat
-  artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Sunny Skybix.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ec3b9e4db0b98bed97f23e35106a806') in 0.021933 seconds 
-  Import took 0.032164 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.055368 seconds.
+  Time since last request: 0.000193 seconds.
   path: Assets/Skybox-Rainy/Sunny Skybox.mat
   artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b3210b5e79d6f7653f093e23516ab80') in 0.021869 seconds 
-  Import took 0.029848 seconds .
+Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b27bc401f228e81bc0b8f14a217f544') in 0.063842 seconds 
+  Import took 0.069553 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 173.605546 seconds.
-  path: Assets/Skybox-Rainy/Rainy Skybox.mat
-  artifactKey: Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Rainy Skybox.mat using Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd0c99d030dea7a15bd1bf867758ea8b') in 0.037367 seconds 
-  Import took 0.046181 seconds .
+  Time since last request: 17.840978 seconds.
+  path: Assets/Skybox-Rainy/NormBack.png
+  artifactKey: Guid(5f13fc69d4a77124aa989c412410243f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormBack.png using Guid(5f13fc69d4a77124aa989c412410243f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '133bd6b5eb037ec24b312603b293176f') in 0.630874 seconds 
+  Import took 0.647273 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Skybox-Rainy/Sunny Skybox.mat
-  artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717b4d109b6c47e2b5ca2e1a47408b32') in 0.033566 seconds 
-  Import took 0.041535 seconds .
+  Time since last request: 0.000187 seconds.
+  path: Assets/Skybox-Rainy/SnowBack.png
+  artifactKey: Guid(a589a6cb92ef60142aa25fd7faec342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowBack.png using Guid(a589a6cb92ef60142aa25fd7faec342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97c40d1b5a2c24150c12478a0729c266') in 0.036674 seconds 
+  Import took 0.042766 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Skybox-Rainy/NormTop.png
+  artifactKey: Guid(3f6401e9d9c88d3449c664cb001aab78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormTop.png using Guid(3f6401e9d9c88d3449c664cb001aab78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6b2cdec5e4aa1a75e44198efec2e6d') in 0.053446 seconds 
+  Import took 0.062890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000366 seconds.
+  path: Assets/Skybox-Rainy/NormRight.png
+  artifactKey: Guid(872cbf0100187e444ab176d47a85b367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormRight.png using Guid(872cbf0100187e444ab176d47a85b367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324ccba168cbe6395cd0567ac2f4bfaa') in 0.037229 seconds 
+  Import took 0.056441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Skybox-Rainy/SnowFront.png
+  artifactKey: Guid(c774bbe1899e89c47992edd8b52a9735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowFront.png using Guid(c774bbe1899e89c47992edd8b52a9735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '460fb4b67de11f3d76597f23406afe15') in 0.088867 seconds 
+  Import took 0.105085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/Skybox-Rainy/NormBottom.png
+  artifactKey: Guid(9de0177eb5f0e554eb67ba6254863a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormBottom.png using Guid(9de0177eb5f0e554eb67ba6254863a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ab0ef73d14a8873bc74486edb75cff') in 0.051068 seconds 
+  Import took 0.061455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Skybox-Rainy/SnowTop.png
+  artifactKey: Guid(538cb28f2785d1a4abc44cd12145984b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowTop.png using Guid(538cb28f2785d1a4abc44cd12145984b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d291953aadcbb2ec4ea60852b986659') in 0.045080 seconds 
+  Import took 0.059020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Skybox-Rainy/SnowRight.png
+  artifactKey: Guid(f3ea59eb5aac50e419583ba17e379c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowRight.png using Guid(f3ea59eb5aac50e419583ba17e379c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f125e66347ce51697ac828698b7c53b') in 0.044855 seconds 
+  Import took 0.056938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Skybox-Rainy/NormLeft.png
+  artifactKey: Guid(5666b8c104d04c54bb0278927a20853f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormLeft.png using Guid(5666b8c104d04c54bb0278927a20853f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5579aa29063b00088a7f1eddbe518b3e') in 0.030283 seconds 
+  Import took 0.035261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Skybox-Rainy/SnowBottom.png
+  artifactKey: Guid(437a45829e67d0840ba6000072b54827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowBottom.png using Guid(437a45829e67d0840ba6000072b54827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aabd11d5618c6f757973304d1d43f31') in 0.021775 seconds 
+  Import took 0.026936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Skybox-Rainy/NormFront.png
+  artifactKey: Guid(732d397b5a8e98343af44ace484997a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormFront.png using Guid(732d397b5a8e98343af44ace484997a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af48bdf2a2bfa51dca3cbb4b2cd912fd') in 0.016274 seconds 
+  Import took 0.022463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/Skybox-Rainy/SnowLeft.png
+  artifactKey: Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowLeft.png using Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a916ccdd5b55c3d393b0acc83ebbb4f') in 0.017284 seconds 
+  Import took 0.025702 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
