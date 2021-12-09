@@ -27,24 +27,22 @@ public class GameManager : MonoBehaviour
 
     private float spawnCoordsX;
     private float spawnCoordsZ;
+
+    public GameObject EnemiesSpawn;
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
         actionReference.action.performed += Pause;
-       
-        CheckForEnemies();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Enemies.Length < 1)
-        {
-            SpawnEnemies();
-        }
-
+       Debug.Log(EnemiesSpawn.transform.childCount);
         StartCoroutine(SpawnHealth());
         SpawnCoords();
         CheckForEnemies();
@@ -70,20 +68,20 @@ public class GameManager : MonoBehaviour
 
     private void SpawnEnemies()
     {
-       Debug.Log("Getting Activated");
-            for (int i = 0; i < 10; i++)
-            {
-                GameObject EnemiesWave = Instantiate(WavePrefab, spawnCoords, Quaternion.identity);
-                EnemiesWave.SetActive(true);
-                CheckForEnemies();
-            
-        }   
-            }
+        Debug.Log("this is working");
+        Destroy(EnemiesSpawn);
+
+        Vector3 spawnCoords = new Vector3(0,9.03999996f,12.1800003f);
+        Vector3 spawnRotation = new Vector3(0, 0, 180);
+        EnemiesSpawn = Instantiate(WavePrefab, spawnCoords, Quaternion.identity);
+    }
 
     void CheckForEnemies()
     {
-        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        numberofenemies = Enemies.Length;
+        if (EnemiesSpawn.transform.childCount == 0)
+        {
+            SpawnEnemies();
+        }
     }
 
     IEnumerator SpawnHealth()

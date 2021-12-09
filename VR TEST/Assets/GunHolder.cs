@@ -23,8 +23,8 @@ public class GunHolder : MonoBehaviour
     public GameObject gun1;
     public GameObject gun2;
     public GameObject gun3;
-    // public GameObject gun4;
-    // public GameObject gun5;
+    public GameObject gun4;
+    public GameObject gun5;
 
     private InputDevice targetDevice;
     private float SecondaryInput;
@@ -152,37 +152,37 @@ public class GunHolder : MonoBehaviour
                         gun1.SetActive(true);
                         gun2.SetActive(false);
                         gun3.SetActive(false);
-                       // gun4.SetActive(false);
-                        //gun5.SetActive(false);
+                        gun4.SetActive(false);
+                        gun5.SetActive(false);
                         break;
                     case 1:
                         gun1.SetActive(false);
                         gun2.SetActive(true);
                         gun3.SetActive(false);
-                      //  gun4.SetActive(false);
-                      //  gun5.SetActive(false);
+                      gun4.SetActive(false);
+                      gun5.SetActive(false);
                         break;
                     case 2:
                         gun1.SetActive(false);
                         gun2.SetActive(false);
                         gun3.SetActive(true);
-                        //gun4.SetActive(false);
-                        //gun5.SetActive(false);
+                        gun4.SetActive(false);
+                        gun5.SetActive(false);
                         break;
-                    // case 3:
-                    //     gun1.SetActive(false);
-                    //     gun2.SetActive(false);
-                    //     gun3.SetActive(false);
-                    //     gun4.SetActive(true);
-                    //     gun5.SetActive(false);
-                    //     break;
-                    // case 4:
-                    //     gun1.SetActive(false);
-                    //     gun2.SetActive(false);
-                    //     gun3.SetActive(false);
-                    //     gun4.SetActive(false);
-                    //     gun5.SetActive(true);
-                    //     break;
+                    case 3:
+                        gun1.SetActive(false);
+                        gun2.SetActive(false);
+                        gun3.SetActive(false);
+                        gun4.SetActive(true);
+                        gun5.SetActive(false);
+                        break;
+                    case 4:
+                        gun1.SetActive(false);
+                        gun2.SetActive(false);
+                        gun3.SetActive(false);
+                        gun4.SetActive(false);
+                        gun5.SetActive(true);
+                        break;
                     case -1f:
                         buttonCount = 3;
                         break;

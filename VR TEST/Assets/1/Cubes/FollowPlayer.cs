@@ -11,6 +11,7 @@ public class FollowPlayer : MonoBehaviour
     public float SmoothLook = 30f;
     private Rigidbody rb;
     private Vector3 movement;
+    private GameObject player;
 
     
 
@@ -18,6 +19,10 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        player = GameObject.FindWithTag("Player");
+        target = player.GetComponent<Transform>();
+
+
     }
 
     // Update is called once per frame

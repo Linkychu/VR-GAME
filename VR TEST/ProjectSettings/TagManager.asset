@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - IceBlock
   - Health
+  - Centerpoint
+  - Fire
+  - NavemeshEnemies
   layers:
   - Default
   - TransparentFX
