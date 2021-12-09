@@ -224,7 +224,7 @@ MonoBehaviour:
   Gradius: 0.4
   Radius: 2
   distance: {x: 0, y: 0, z: 0}
-  spread: 20
+  spread: 200
   centerPoint: {fileID: 0}
   rotSpeed: 30
 --- !u!114 &8850595000380135634
@@ -239,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc5c3e9550ebe94a87af4216554cb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 30
-  explosionForce: 200
+  radius: 60
+  explosionForce: 300
   Damage: 100
 --- !u!136 &6743581009219327380
 CapsuleCollider:
