@@ -243,3 +243,196 @@ Received Import Request.
 Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717b4d109b6c47e2b5ca2e1a47408b32') in 0.033566 seconds 
   Import took 0.041535 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 32000.715778 seconds.
+  path: Assets/Skybox-Rainy/NormBack.png
+  artifactKey: Guid(5f13fc69d4a77124aa989c412410243f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormBack.png using Guid(5f13fc69d4a77124aa989c412410243f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aa79d3f282b18ca669242aaaacb670e') in 0.193007 seconds 
+  Import took 0.453111 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/Skybox-Rainy/SnowBack.png
+  artifactKey: Guid(a589a6cb92ef60142aa25fd7faec342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowBack.png using Guid(a589a6cb92ef60142aa25fd7faec342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d246db17ef15c6f14b16f063f89a0c7') in 0.066476 seconds 
+  Import took 0.072754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Skybox-Rainy/NormTop.png
+  artifactKey: Guid(3f6401e9d9c88d3449c664cb001aab78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormTop.png using Guid(3f6401e9d9c88d3449c664cb001aab78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5524af70ea215f1399d714f64b5e7eb1') in 0.028299 seconds 
+  Import took 0.038397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Skybox-Rainy/NormRight.png
+  artifactKey: Guid(872cbf0100187e444ab176d47a85b367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormRight.png using Guid(872cbf0100187e444ab176d47a85b367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67afcdfae07f33c9c3f52eb067f583f8') in 0.024921 seconds 
+  Import took 0.034451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Skybox-Rainy/SnowFront.png
+  artifactKey: Guid(c774bbe1899e89c47992edd8b52a9735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowFront.png using Guid(c774bbe1899e89c47992edd8b52a9735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fca2d429e2b1cf3a1f6353787c0346a6') in 0.024713 seconds 
+  Import took 0.032065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Skybox-Rainy/NormBottom.png
+  artifactKey: Guid(9de0177eb5f0e554eb67ba6254863a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormBottom.png using Guid(9de0177eb5f0e554eb67ba6254863a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef30469b21c39e9daa2d5ea46bbe611') in 0.031728 seconds 
+  Import took 0.039058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Skybox-Rainy/SnowTop.png
+  artifactKey: Guid(538cb28f2785d1a4abc44cd12145984b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowTop.png using Guid(538cb28f2785d1a4abc44cd12145984b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94788ecf3fdb7f5374acf24446ebd1bd') in 0.029059 seconds 
+  Import took 0.037257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Skybox-Rainy/SnowRight.png
+  artifactKey: Guid(f3ea59eb5aac50e419583ba17e379c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowRight.png using Guid(f3ea59eb5aac50e419583ba17e379c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8c931e79691156921e03334563f65de') in 0.039728 seconds 
+  Import took 0.047848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Skybox-Rainy/NormLeft.png
+  artifactKey: Guid(5666b8c104d04c54bb0278927a20853f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormLeft.png using Guid(5666b8c104d04c54bb0278927a20853f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485b20fa7f91b6826e79d2a5291d960a') in 0.030306 seconds 
+  Import took 0.036946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Skybox-Rainy/SnowBottom.png
+  artifactKey: Guid(437a45829e67d0840ba6000072b54827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowBottom.png using Guid(437a45829e67d0840ba6000072b54827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80a7a92a6bdbeba10b1033c51968c2ae') in 0.029576 seconds 
+  Import took 0.037058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Skybox-Rainy/NormFront.png
+  artifactKey: Guid(732d397b5a8e98343af44ace484997a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/NormFront.png using Guid(732d397b5a8e98343af44ace484997a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c0adfd8d6c12f7c65cfca7af8263be2') in 0.026694 seconds 
+  Import took 0.034992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Skybox-Rainy/SnowLeft.png
+  artifactKey: Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowLeft.png using Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7dd502931aea3e1c8420c073f1c954c') in 0.040397 seconds 
+  Import took 0.046291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009015 seconds.
+  path: Assets/Skybox-Rainy/SnowLeft.png
+  artifactKey: Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/SnowLeft.png using Guid(5b693658c2a15e041980814b83f8e860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7dd502931aea3e1c8420c073f1c954c') in 0.023425 seconds 
+  Import took 0.033907 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.518441 seconds.
+  path: Assets/Skybox-Rainy/Normal.mat
+  artifactKey: Guid(689165f20f6e0bb47a225fa52416c95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Normal.mat using Guid(689165f20f6e0bb47a225fa52416c95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3d8db94102bf7fd6247591aad4b4c1') in 0.098688 seconds 
+  Import took 0.105314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 164.450085 seconds.
+  path: Assets/Skybox-Rainy/Skyboxes
+  artifactKey: Guid(9c86055c68334d64a8d1b1cd89d941be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Skyboxes using Guid(9c86055c68334d64a8d1b1cd89d941be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46489f736486c7ee200e60f927babdb8') in 0.013186 seconds 
+  Import took 0.020805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004134 seconds.
+  path: Assets/Skybox-Rainy/Skyboxes
+  artifactKey: Guid(9c86055c68334d64a8d1b1cd89d941be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Skyboxes using Guid(9c86055c68334d64a8d1b1cd89d941be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46489f736486c7ee200e60f927babdb8') in 0.004670 seconds 
+  Import took 0.012413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.840100 seconds.
+  path: Assets/Skybox-Rainy/Snow Skybox.mat
+  artifactKey: Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Snow Skybox.mat using Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0615930fe84d60342ef72b7563d178cd') in 0.034576 seconds 
+  Import took 0.042423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.429102 seconds.
+  path: Assets/Skybox-Rainy/Skyboxes/Normal.mat
+  artifactKey: Guid(689165f20f6e0bb47a225fa52416c95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Skyboxes/Normal.mat using Guid(689165f20f6e0bb47a225fa52416c95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '753c004e78b4a933130b6fbb5ae87070') in 0.081033 seconds 
+  Import took 0.088433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Skybox-Rainy/Skyboxes/Snow Skybox.mat
+  artifactKey: Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Skyboxes/Snow Skybox.mat using Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2109c7a7508a2da250116ee8f834d825') in 0.060885 seconds 
+  Import took 0.069279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.824773 seconds.
+  path: Assets/Skybox-Rainy/Skyboxes/Snow Skybox.mat
+  artifactKey: Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Skyboxes/Snow Skybox.mat using Guid(3358e55483731a044b6dfc6ae7f66736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1867636280a42a98746436a2117f7b3') in 0.105076 seconds 
+  Import took 0.125572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 149.269040 seconds.
+  path: Assets/Skybox-Rainy/Rainy Skybox.mat
+  artifactKey: Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Rainy Skybox.mat using Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '135a8b693f7f047bc2447a4476bbc573') in 0.078850 seconds 
+  Import took 0.087825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Skybox-Rainy/Sunny Skybox.mat
+  artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b27bc401f228e81bc0b8f14a217f544') in 0.125409 seconds 
+  Import took 0.134597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000424 seconds.
+  path: Assets/Skybox-Rainy/Rainy Skybox.mat
+  artifactKey: Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Rainy Skybox.mat using Guid(848093d7efcf52541a6fc1cd726da2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '135a8b693f7f047bc2447a4476bbc573') in 0.045210 seconds 
+  Import took 0.053190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Skybox-Rainy/Sunny Skybox.mat
+  artifactKey: Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Skybox-Rainy/Sunny Skybox.mat using Guid(ab40765fc85eaca49aa4b19a37638340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b27bc401f228e81bc0b8f14a217f544') in 0.036925 seconds 
+  Import took 0.044523 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
