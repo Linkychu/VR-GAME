@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Bolt;
 using UnityEngine;
 
 public class SystemicProperties : MonoBehaviour
@@ -17,6 +18,12 @@ public class SystemicProperties : MonoBehaviour
     private int Rng;
     private bool Spawn;
     private int Seed;
+
+   [SerializeField] private Material wMaterial;
+   [SerializeField] private Material Normal;
+   [SerializeField] private Material Sun;
+   [SerializeField] private Material Snow;
+   [SerializeField] private Material Thunder;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +46,10 @@ public class SystemicProperties : MonoBehaviour
     {
         if (!Spawn)
         {
-            Seed = Random.Range(0, 101);
+            Seed = Random.Range(0, 1000);
             
 
-            if (!Spawn && count == 0 && Seed < 20)
+            if (!Spawn && count == 0 && Seed > 20 && Seed < 40)
             {
 
                 Spawn = true;
@@ -99,6 +106,7 @@ public class SystemicProperties : MonoBehaviour
 
         if (Spawn == true && count == 1)
         {
+            RenderSettings.skybox = wMaterial;
             windOrigin = GameObject.FindWithTag("Centerpoint").GetComponent<Transform>();
             windOriginPos = windOrigin.transform.position;
             windCopy = (GameObject) Instantiate(wind, windOriginPos, Quaternion.identity);
@@ -116,6 +124,7 @@ public class SystemicProperties : MonoBehaviour
                 IEnumerator Reset()
                 {
                     yield return new WaitForSeconds(timer);
+                    RenderSettings.skybox = Normal;
                     Spawn = false;
                     yield return new WaitForSeconds(timer * 2);
                     count = 0;

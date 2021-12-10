@@ -10,8 +10,7 @@ public class ObjectPhysics : MonoBehaviour
     private BoxCollider boxCollider;
     private Transform objectTrans;
     [SerializeField] private CubeHealth cubeHealth;
-    private int dps = 5;
-    private NavMeshAgent cubeAI;
+    private int dps = 1;
     private bool frozen;
     private float seconds;
     private Renderer _renderer;
@@ -24,7 +23,6 @@ public class ObjectPhysics : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         boxCollider = gameObject.GetComponent<BoxCollider>();
         cubeHealth = GetComponent<CubeHealth>();
-        cubeAI = GetComponent<NavMeshAgent>();
         _renderer = GetComponent<Renderer>();
         material = GetComponent<Material>();
 
@@ -47,6 +45,7 @@ public class ObjectPhysics : MonoBehaviour
             objectTrans = other.gameObject.GetComponent<Transform>();
             if (other.gameObject.CompareTag("Ice"))
             {
+                rb.velocity = new Vector3(0, 0, 0);
                 _renderer.material.color = Color.cyan;
                 Ice();
             }
@@ -54,8 +53,7 @@ public class ObjectPhysics : MonoBehaviour
 
         if (other.gameObject.CompareTag("Electricity"))
         {
-            cubeAI.isStopped = true;
-            rb.isKinematic = false;
+            rb.velocity = new Vector3(0, 0, 0);
             rb.constraints = RigidbodyConstraints.FreezeAll;
             _renderer.material.color = Color.yellow;
             StartCoroutine(ShockTimer());
@@ -66,17 +64,13 @@ public class ObjectPhysics : MonoBehaviour
     {
         yield return new WaitForSeconds(6);
         rb.constraints = RigidbodyConstraints.None;
-        rb.isKinematic = true;
-        cubeAI.isStopped = false;
         _renderer.material.color = initialColour;
     }
     
 
     void Ice()
     {
-        cubeAI.isStopped = true;
-        rb.isKinematic = false;
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         boxCollider.size = new Vector3(objectTrans.localScale.x, objectTrans.localScale.y, objectTrans.localScale.z);
         frozen = true;
         StartCoroutine(IceWait());
@@ -86,8 +80,6 @@ public class ObjectPhysics : MonoBehaviour
     IEnumerator IceWait()
     {
         yield return new WaitForSeconds(10);
-        cubeAI.isStopped = false;
-        rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints.None;
         boxCollider.size = new Vector3(1, 1, 1);
         frozen = false;

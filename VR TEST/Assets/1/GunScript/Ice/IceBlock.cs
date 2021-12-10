@@ -20,7 +20,7 @@ public class IceBlock : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         StartCoroutine(Timer());
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 8);
         
         
     }

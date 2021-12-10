@@ -56,5 +56,10 @@ public class CubeHealth : MonoBehaviour
         {
             EnemyDamage(ImpactDamage);
         }
+
+        if (other.gameObject.CompareTag("Ice"))
+        {
+            EnemyDamage(IceDamage);
+        }
     }
 }
