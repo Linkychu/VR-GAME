@@ -30,9 +30,9 @@ public class ShootWind : MonoBehaviour
     private GunHolder gunHolder;
     void Start()
     {
-        TryInitialize();
-    
+
         gunHolder = GetComponentInParent<GunHolder>();
+        shootActionReference.action.performed += Shootwind;
 
     }
 
@@ -42,71 +42,20 @@ public class ShootWind : MonoBehaviour
         shootingPos = origin.transform.position;
         origin1 = GetComponentInChildren<Transform>();
         origin2 = origin1.transform.position;
-        TryInitialize();
-        shootActionReference.action.performed += Shootwind;
 
-      
+
+
     }
-
-    void TryInitialize()
-    {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-        InputDeviceCharacteristics controllerCharacteristics = InputDeviceCharacteristics.Right;
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
-        foreach (var device in inputDevices)
-        {
-            
-        }
-
-        if (inputDevices.Count > 0)
-        {
-            targetDevice = inputDevices[0];
-        }
-    }
-
     void Shootwind(InputAction.CallbackContext context)
     {
         
-        // Debug.Log(shootingPos);
-        // RaycastHit somethingHit;
-        //
-        // if (Physics.Raycast(shootingPos, transform.TransformDirection(Vector3.forward), out somethingHit, 1f))
-        // {
-        //      
-        //      
-            
-             weaponNumber = gunHolder.buttonCount;
-            if (weaponNumber == 0)
+        weaponNumber = gunHolder.buttonCount;
+        if (weaponNumber == 0)
             {
-                
                 Rigidbody wind = Instantiate(windPrefab, origin.transform.position, Quaternion.identity);
                 wind.velocity = transform.TransformDirection(Vector3.up * 20);
-                
-                RaycastHit somethingHit;
-                if (Physics.Raycast(shootingPos, Vector3.forward, out somethingHit, 1f))
-                {
-                    Debug.Log(somethingHit.transform.name);
-                    Transform Cube = somethingHit.transform.GetComponent<Transform>();
-                  
-                    NavMeshAgent cubeAI = Cube.gameObject.GetComponent<NavMeshAgent>();
-                    Rigidbody cubeRb = Cube.gameObject.GetComponent<Rigidbody>();
-
-                    cubeAI.isStopped = true;
-                    cubeRb.isKinematic = false;
-                    
-                    Destroy(wind.gameObject, 10);
-                }
-
-                else
-                {
-                    Destroy(wind.gameObject, 10);
-                }
-               
-                
+                Destroy(wind.gameObject, 10);
             }
-    //}
-
     }
     
 }

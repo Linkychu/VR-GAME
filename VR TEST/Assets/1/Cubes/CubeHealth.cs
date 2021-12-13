@@ -33,7 +33,7 @@ public class CubeHealth : MonoBehaviour
         }
     }
 
-    public void EnemyDamage(int EnemyDamgedNum)
+    public void EnemyDamage(float EnemyDamgedNum)
     {
         cubeHealth -= EnemyDamgedNum;
     }

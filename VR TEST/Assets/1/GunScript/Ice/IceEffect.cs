@@ -41,9 +41,8 @@ public class IceEffect : MonoBehaviour
             {
                 objectTransform = other.gameObject.transform;
                 objectCol = other.gameObject.GetComponent<Collider>();
-                objectRb.constraints = RigidbodyConstraints.FreezeAll;
 
-               if (numberOfIceBlocks < 1)
+                if (numberOfIceBlocks < 1)
                 {
                     GameObject InstantiatedIce = Instantiate(iceBlock,
                         other.transform.position + new Vector3(0, 0.1f, 0), transform.rotation);

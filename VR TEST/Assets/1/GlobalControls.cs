@@ -29,21 +29,21 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""ChangeGunUp"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""b53ffd3d-4409-4462-a63b-8196d457c5c0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""ChangeGunDown"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""e48d536d-849f-41dc-a4d2-538c74f24bb6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Shoot"",

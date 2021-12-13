@@ -14,7 +14,7 @@ public class ShootIce : MonoBehaviour
 
     public float weaponNumber;
     private ActionBasedController Rcontroller;
-    private float speed = 20;
+    [SerializeField]private float speed = 20;
     private InputDevice targetDevice;
     private GlobalControls _controls;
 
@@ -28,7 +28,6 @@ public class ShootIce : MonoBehaviour
   
     void Start()
     {
-        TryInitialize();
         shootActionReference.action.performed += Shootice;
         gunHolder = GetComponentInParent<GunHolder>();
 
@@ -40,28 +39,9 @@ public class ShootIce : MonoBehaviour
         origin1 = GetComponentInChildren<Transform>();
         origin2 = origin1.transform.position;
         shootingPos = origin.transform.position;
-
-       
-        TryInitialize();
+        
 
       
-    }
-
-    void TryInitialize()
-    {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-        InputDeviceCharacteristics controllerCharacteristics = InputDeviceCharacteristics.Right;
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
-        foreach (var device in inputDevices)
-        {
-           
-        }
-
-        if (inputDevices.Count > 0)
-        {
-            targetDevice = inputDevices[0];
-        }
     }
 
     void Shootice(InputAction.CallbackContext context)

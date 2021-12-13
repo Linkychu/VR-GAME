@@ -10,13 +10,16 @@ public class ObjectPhysics : MonoBehaviour
     private BoxCollider boxCollider;
     private Transform objectTrans;
     [SerializeField] private CubeHealth cubeHealth;
-    private int dps = 1;
+    private float dps = 0.5f;
     private bool frozen;
     private float seconds;
     private Renderer _renderer;
     private Material material;
     Color initialColour;
     private int colurvar;
+    private isFlammable _flammable;
+
+    private int firedps = 1;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class ObjectPhysics : MonoBehaviour
         material = GetComponent<Material>();
 
         initialColour = GetComponent<Renderer>().material.color;
+        _flammable = GetComponent<isFlammable>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,13 @@ public class ObjectPhysics : MonoBehaviour
         if (frozen)
         {
             StartCoroutine(DamagePerSecond());
+        }
+
+        if (_flammable.onFire == true)
+        {
+            _renderer.material.color = Color.red;
+            cubeHealth.EnemyDamage(firedps);
+            StartCoroutine(ResetColour());
         }
     }
 
@@ -58,6 +69,7 @@ public class ObjectPhysics : MonoBehaviour
             _renderer.material.color = Color.yellow;
             StartCoroutine(ShockTimer());
         }
+        
     }
 
     IEnumerator ShockTimer()
@@ -94,6 +106,12 @@ public class ObjectPhysics : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         frozen = true;
 
+    }
+
+    IEnumerator ResetColour()
+    {
+        yield return new WaitUntil(() => _flammable.onFire == false);
+        _renderer.material.color = initialColour;
     }
 }
 

@@ -16,7 +16,7 @@ public class GunHolder : MonoBehaviour
     private bool PrimaryButtonPressed;
     private bool SecondaryButtonPressed;
 
-    public float buttonCount;
+    public int buttonCount;
     private float PrimaryInput;
 
 
@@ -24,7 +24,6 @@ public class GunHolder : MonoBehaviour
     public GameObject gun2;
     public GameObject gun3;
     public GameObject gun4;
-    public GameObject gun5;
 
     private InputDevice targetDevice;
     private float SecondaryInput;
@@ -44,21 +43,21 @@ public class GunHolder : MonoBehaviour
     private int state;
     
     
-    //[SerializeField] private InputActionProperty PrimaryActionReference;
-    //[SerializeField] private InputActionProperty SecondaryActionReference;
-    
+    [SerializeField] private InputActionProperty PrimaryActionReference;
+    [SerializeField] private InputActionProperty SecondaryActionReference;
 
-    //private InputAction SelectGun;
+        
+        private InputAction SelectGun;
     // Start is called before the first frame update
     
 
     void Start()
     {
-        Allowed = true;
-        TryInitialize();
+        buttonCount = 0;
         WeaponCalculate();
-        //PrimaryActionReference.action.performed += VRInputUp;
-        //SecondaryActionReference.action.performed += VRInputDown;
+        Allowed = true;
+        PrimaryActionReference.action.performed += VRInputUp;
+        SecondaryActionReference.action.performed += VRInputDown;
 
 
     }
@@ -66,132 +65,142 @@ public class GunHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WeaponCalculate();
-        TryInitialize();
+        int previousSelectedWeapon = buttonCount;
 
-        PrimaryInputCheck();
-        SecondaryInputCheck();
+        if (previousSelectedWeapon != buttonCount)
+        {
+            WeaponCalculate();
+        }
 
     }
 
-    void PrimaryInputCheck()
+    void VRInputUp(InputAction.CallbackContext context)
     {
-        
-        if (Allowed && targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+        if (buttonCount >= transform.childCount - 1)
         {
-            StartCoroutine(Checker());
-            primaryButtonValue = false;
-            PrimaryButtonPressed = true;
-            Allowed = false;
-
+            buttonCount = 0;
         }
-        
-        
+
         else
         {
-            PrimaryButtonPressed = false;
+            buttonCount++;
         }
 
-        
-        IEnumerator Checker()
-        {
-            yield return new WaitForSeconds(0.2f);
-            buttonCount += 1;
-            Allowed = true;
-        }
-
-        
     }
-        
+
+    void VRInputDown(InputAction.CallbackContext context)
+    {
+
+        if (buttonCount <= 0)
+        {
+            buttonCount = transform.childCount - 1;
+        }
+
+        else
+        {
+            buttonCount--;
+        }
+    }
+
+    // void PrimaryInputCheck()
+    // {
+    //     
+    //     if (Allowed && targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+    //     {
+    //         Debug.Log("Checks Button");
+    //         StartCoroutine(Checker());
+    //         primaryButtonValue = false;
+    //         PrimaryButtonPressed = true;
+    //         Allowed = false;
+    //
+    //     }
+    //     
+    //     
+    //     else
+    //     {
+    //         PrimaryButtonPressed = false;
+    //     }
+    //
+    //     
+    //     IEnumerator Checker()
+    //     {
+    //         Debug.Log("Yes");
+    //         yield return new WaitForSeconds(0.25f);
+    //         buttonCount += 1;
+    //         Allowed = true;
+    //     }
+    //
+    //     
+    // }
+    //     
    
         
-
-    void SecondaryInputCheck()
-    {
-        targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
-        if (secondaryButtonValue)
-        {
-            buttonCount -= Convert.ToSingle(secondaryButtonValue);
-            SecondaryButtonPressed = true;
-        }
-
-        else
-        {
-            SecondaryButtonPressed = false;
-        }
-
-    }
-
-    void TryInitialize()
-    {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-        InputDeviceCharacteristics controllerCharacteristics = InputDeviceCharacteristics.Right;
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(device.name + device.characteristics);
-        }
-
-        if (inputDevices.Count > 0)
-        {
-            targetDevice = inputDevices[0];
-        }
-        
-        
-        
-
-    }
+    //
+    // void SecondaryInputCheck()
+    // {
+    //     targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+    //     if (secondaryButtonValue)
+    //     {
+    //         buttonCount -= Convert.ToSingle(secondaryButtonValue);
+    //         SecondaryButtonPressed = true;
+    //     }
+    //
+    //     else
+    //     {
+    //         SecondaryButtonPressed = false;
+    //     }
+    //
+    // }
+    
 
     void WeaponCalculate()
     {
-        
-        switch (buttonCount)
-                {
-                    case 0:
-                        gun1.SetActive(true);
-                        gun2.SetActive(false);
-                        gun3.SetActive(false);
-                        gun4.SetActive(false);
-                        gun5.SetActive(false);
-                        break;
-                    case 1:
-                        gun1.SetActive(false);
-                        gun2.SetActive(true);
-                        gun3.SetActive(false);
-                      gun4.SetActive(false);
-                      gun5.SetActive(false);
-                        break;
-                    case 2:
-                        gun1.SetActive(false);
-                        gun2.SetActive(false);
-                        gun3.SetActive(true);
-                        gun4.SetActive(false);
-                        gun5.SetActive(false);
-                        break;
-                    case 3:
-                        gun1.SetActive(false);
-                        gun2.SetActive(false);
-                        gun3.SetActive(false);
-                        gun4.SetActive(true);
-                        gun5.SetActive(false);
-                        break;
-                    case 4:
-                        gun1.SetActive(false);
-                        gun2.SetActive(false);
-                        gun3.SetActive(false);
-                        gun4.SetActive(false);
-                        gun5.SetActive(true);
-                        break;
-                    case -1f:
-                        buttonCount = 3;
-                        break;
+        int i = 0;
 
-                    default:
-                        buttonCount = 0;
-                        state = 1;
-                        break;
-                }
-
+        foreach (Transform weapon in transform)
+        {
+            if (i == buttonCount)
+            {
+                weapon.gameObject.SetActive(true);
             }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+            }
+
+            i++;
+
+
         }
+        //     int WeaponNumber = buttonCount;
+        //     switch (WeaponNumber)
+        //         {
+        //             case 0:
+        //                 gun1.SetActive(true);
+        //                 gun2.SetActive(false);
+        //                 gun3.SetActive(false);
+        //                 gun4.SetActive(false);
+        //                 break;
+        //             case 1:
+        //                 gun1.SetActive(false);
+        //                 gun2.SetActive(true);
+        //                 gun3.SetActive(false);
+        //                 gun4.SetActive(false);
+        //                 break;
+        //             case 2:
+        //                 gun1.SetActive(false);
+        //                 gun2.SetActive(false);
+        //                 gun3.SetActive(true);
+        //                 gun4.SetActive(false);
+        //                 break;
+        //             case 3:
+        //                 gun1.SetActive(false);
+        //                 gun2.SetActive(false);
+        //                 gun3.SetActive(false);
+        //                 gun4.SetActive(true);
+        //                 break;
+        //             default:
+        //                 return;
+        //         }
+    }
+}

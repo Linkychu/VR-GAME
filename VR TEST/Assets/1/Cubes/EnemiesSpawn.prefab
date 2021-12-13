@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4294167311025255219}
   - component: {fileID: 7666696212691280228}
   - component: {fileID: 7118884127761343652}
+  - component: {fileID: 3930392310477367003}
   m_Layer: 0
   m_Name: Cube (14)
   m_TagString: Enemy
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,6 +157,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &3930392310477367003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685236082493885959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &722337845232994970
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +187,7 @@ GameObject:
   - component: {fileID: 7935806750557672212}
   - component: {fileID: 5651424301610603998}
   - component: {fileID: 6301025513191751448}
+  - component: {fileID: 3367640955069475684}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Enemy
@@ -220,7 +236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -312,6 +328,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &3367640955069475684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722337845232994970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &1403438825912844168
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +358,7 @@ GameObject:
   - component: {fileID: 1283039079819687392}
   - component: {fileID: 6061851092408476387}
   - component: {fileID: 8635198062558314061}
+  - component: {fileID: 6365844202606363158}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Enemy
@@ -376,7 +407,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,6 +499,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &6365844202606363158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403438825912844168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &2145515962627123954
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +529,7 @@ GameObject:
   - component: {fileID: 1568471296738087517}
   - component: {fileID: 8258640048335058604}
   - component: {fileID: 2270633482830526984}
+  - component: {fileID: 271707759928211445}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Enemy
@@ -532,7 +578,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -624,6 +670,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &271707759928211445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145515962627123954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &2910115650239280175
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +700,7 @@ GameObject:
   - component: {fileID: 955657714118166274}
   - component: {fileID: 3026493283825944182}
   - component: {fileID: 6752880231979141225}
+  - component: {fileID: 9008243292567938905}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Enemy
@@ -688,7 +749,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -780,6 +841,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &9008243292567938905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910115650239280175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &3318424882999076587
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +921,7 @@ GameObject:
   - component: {fileID: 4219003890574707138}
   - component: {fileID: 280003927930091369}
   - component: {fileID: 2225058767075367279}
+  - component: {fileID: 4780363099735933049}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Enemy
@@ -894,7 +970,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -986,6 +1062,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &4780363099735933049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436941263871548913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &3571387065145218364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1092,7 @@ GameObject:
   - component: {fileID: 8970847459648200715}
   - component: {fileID: 8309586479947242534}
   - component: {fileID: 1549619615191231447}
+  - component: {fileID: 3026301373311421209}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Enemy
@@ -1050,7 +1141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1142,6 +1233,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &3026301373311421209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571387065145218364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &5002182874715411135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1263,7 @@ GameObject:
   - component: {fileID: 539241507534585557}
   - component: {fileID: 6958076590722069782}
   - component: {fileID: 7853151295388953634}
+  - component: {fileID: 6513375778157153856}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Enemy
@@ -1206,7 +1312,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1298,6 +1404,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &6513375778157153856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002182874715411135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &5400230057509091449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1434,7 @@ GameObject:
   - component: {fileID: 882460098400733185}
   - component: {fileID: 1749701633088829447}
   - component: {fileID: 1937229855371845335}
+  - component: {fileID: 677685917386713257}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Enemy
@@ -1362,7 +1483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1454,6 +1575,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &677685917386713257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400230057509091449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &5447280151850442919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1605,7 @@ GameObject:
   - component: {fileID: 2945900143863098299}
   - component: {fileID: 2644710644280945669}
   - component: {fileID: 3552631156292859927}
+  - component: {fileID: 1657367278872753641}
   m_Layer: 0
   m_Name: Cube (19)
   m_TagString: Enemy
@@ -1518,7 +1654,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1610,6 +1746,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &1657367278872753641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447280151850442919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &6259568103075082104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1776,7 @@ GameObject:
   - component: {fileID: 6411396211894743158}
   - component: {fileID: 5681994728064422240}
   - component: {fileID: 6040714637883076921}
+  - component: {fileID: 5312557650011260493}
   m_Layer: 0
   m_Name: Cube (15)
   m_TagString: Enemy
@@ -1674,7 +1825,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1766,6 +1917,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &5312557650011260493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259568103075082104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &6455558227448820531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,6 +1947,7 @@ GameObject:
   - component: {fileID: 1319927826934565880}
   - component: {fileID: 1708071216903284265}
   - component: {fileID: 5676096963687024502}
+  - component: {fileID: 5449414290562661920}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Enemy
@@ -1830,7 +1996,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1922,6 +2088,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &5449414290562661920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455558227448820531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &6456157268756761437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +2118,7 @@ GameObject:
   - component: {fileID: 4498960345684881165}
   - component: {fileID: 5173690007217901641}
   - component: {fileID: 3476525864982199575}
+  - component: {fileID: 4855509068767646851}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Enemy
@@ -1986,7 +2167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2078,6 +2259,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &4855509068767646851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456157268756761437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &6828983124937344593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2289,7 @@ GameObject:
   - component: {fileID: 3886395742057363970}
   - component: {fileID: 6212177325005222080}
   - component: {fileID: 6705348791751636474}
+  - component: {fileID: 8296246061752518551}
   m_Layer: 0
   m_Name: Cube (16)
   m_TagString: Enemy
@@ -2142,7 +2338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2234,6 +2430,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &8296246061752518551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6828983124937344593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &7969897745016847747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2460,7 @@ GameObject:
   - component: {fileID: 4388331500023900983}
   - component: {fileID: 7858208580513828133}
   - component: {fileID: 5439387449105125659}
+  - component: {fileID: 1309066215656366532}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -2298,7 +2509,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2390,6 +2601,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &1309066215656366532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969897745016847747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &8127842246192859005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2631,7 @@ GameObject:
   - component: {fileID: 7133703630650767376}
   - component: {fileID: 7491506631289308097}
   - component: {fileID: 366387582401599962}
+  - component: {fileID: 1594147660252201648}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Enemy
@@ -2454,7 +2680,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2546,6 +2772,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &1594147660252201648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127842246192859005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &8224384306886428449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2802,7 @@ GameObject:
   - component: {fileID: 8732602211430252670}
   - component: {fileID: 9167348998171700919}
   - component: {fileID: 2503747543905122745}
+  - component: {fileID: 8199265274314345934}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Enemy
@@ -2610,7 +2851,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2702,6 +2943,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &8199265274314345934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224384306886428449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &8659094308904479079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +2973,7 @@ GameObject:
   - component: {fileID: 3008620044748928797}
   - component: {fileID: 5742080434804861092}
   - component: {fileID: 2536456754185916254}
+  - component: {fileID: 2116687923807607878}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Enemy
@@ -2766,7 +3022,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2858,6 +3114,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &2116687923807607878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659094308904479079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &9011997762094893413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,6 +3144,7 @@ GameObject:
   - component: {fileID: 4542605343989461418}
   - component: {fileID: 4959793701212930785}
   - component: {fileID: 3710592243630033176}
+  - component: {fileID: 8194862294996523330}
   m_Layer: 0
   m_Name: Cube (17)
   m_TagString: Enemy
@@ -2922,7 +3193,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3014,6 +3285,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &8194862294996523330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011997762094893413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
 --- !u!1 &9073710589061347907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,6 +3315,7 @@ GameObject:
   - component: {fileID: 5851391098643758005}
   - component: {fileID: 7352227103868665831}
   - component: {fileID: 1286155234327035970}
+  - component: {fileID: 159024005642230516}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Enemy
@@ -3078,7 +3364,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284d51eac60be2245a732958b6e1980d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3170,3 +3456,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 1000
+--- !u!114 &159024005642230516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073710589061347907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a8483845913841a87e5a77c0a0389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
