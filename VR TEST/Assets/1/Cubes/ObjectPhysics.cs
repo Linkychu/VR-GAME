@@ -21,6 +21,8 @@ public class ObjectPhysics : MonoBehaviour
 
     private int firedps = 1;
 
+    private SystemicProperties _systemicProperties;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class ObjectPhysics : MonoBehaviour
 
         initialColour = GetComponent<Renderer>().material.color;
         _flammable = GetComponent<isFlammable>();
+        _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,11 @@ public class ObjectPhysics : MonoBehaviour
             cubeHealth.EnemyDamage(firedps);
             StartCoroutine(ResetColour());
         }
+
+        if (gameObject.transform.position.y < -50)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -56,18 +64,14 @@ public class ObjectPhysics : MonoBehaviour
             objectTrans = other.gameObject.GetComponent<Transform>();
             if (other.gameObject.CompareTag("Ice"))
             {
-                rb.velocity = new Vector3(0, 0, 0);
-                _renderer.material.color = Color.cyan;
+               
                 Ice();
             }
         }
 
         if (other.gameObject.CompareTag("Electricity"))
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-            _renderer.material.color = Color.yellow;
-            StartCoroutine(ShockTimer());
+            Electricity();
         }
         
     }
@@ -82,6 +86,8 @@ public class ObjectPhysics : MonoBehaviour
 
     void Ice()
     {
+        rb.velocity = new Vector3(0, 0, 0);
+        _renderer.material.color = Color.cyan;
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         boxCollider.size = new Vector3(objectTrans.localScale.x, objectTrans.localScale.y, objectTrans.localScale.z);
         frozen = true;
@@ -112,6 +118,14 @@ public class ObjectPhysics : MonoBehaviour
     {
         yield return new WaitUntil(() => _flammable.onFire == false);
         _renderer.material.color = initialColour;
+    }
+
+    public void Electricity()
+    {
+        rb.velocity = new Vector3(0, 0, 0);
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        _renderer.material.color = Color.yellow;
+        StartCoroutine(ShockTimer());
     }
 }
 

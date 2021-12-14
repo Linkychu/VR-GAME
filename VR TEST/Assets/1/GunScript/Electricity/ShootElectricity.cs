@@ -74,12 +74,12 @@ public class ShootElectricity : MonoBehaviour
         // {
         weaponNumber = gunHolder.buttonCount;
                 
-            if (weaponNumber == 2)
+            if (weaponNumber == 3)
             {
                 Debug.Log("working");
                 Rigidbody electricity;
                 electricity = Instantiate(electricityPrefab, origin.transform.position, origin.transform.rotation);
-                electricity.velocity = transform.TransformDirection(Vector3.forward * 90);
+                electricity.velocity = transform.TransformDirection(Vector3.forward * 30);
                 
                 
                 Destroy(electricity.gameObject, 2);

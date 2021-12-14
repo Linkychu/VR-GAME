@@ -16,21 +16,26 @@ public class WindEffect : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] public float explosionForce;
     private EnemyToggle enemy;
+    
 
     public int Damage = 100;
     private Rigidbody rb;
 
 
     private CubesWind cubes;
+    private SystemicProperties _systemicProperties;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
     }
 
     
 
     // Update is called once per frame
 
+    
     private void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Player"))
@@ -47,6 +52,14 @@ public class WindEffect : MonoBehaviour
 
     private void WindExplosion()
     {
+
+        if (_systemicProperties.windd == true)
+        {
+            radius = radius * 2;
+            explosionForce = explosionForce * 2;
+        }
+        
+        
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider nearby in colliders)
         {
@@ -58,6 +71,6 @@ public class WindEffect : MonoBehaviour
                 Destroy(gameObject, 2f);
             }
         }
-        
+
     }
 }

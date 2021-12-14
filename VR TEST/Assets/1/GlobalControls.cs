@@ -177,6 +177,54 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Create"",
+            ""id"": ""6754c520-dcd6-4032-a2fd-2c8f74c775b7"",
+            ""actions"": [
+                {
+                    ""name"": ""Create"",
+                    ""type"": ""Button"",
+                    ""id"": ""792e9e87-50fd-4b29-816f-9fa13ce340a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Destroy"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ea61324-94ea-483f-ac95-62374b88c323"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6aa2a0a6-77b1-4bb4-9d35-edb3989476ad"",
+                    ""path"": ""<XRController>{RightHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR Controller"",
+                    ""action"": ""Create"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""397a009e-8626-4eed-bda0-9a0df278bca0"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Destroy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -205,6 +253,10 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Pause = m_Global.FindAction("Pause", throwIfNotFound: true);
+        // Create
+        m_Create = asset.FindActionMap("Create", throwIfNotFound: true);
+        m_Create_Create = m_Create.FindAction("Create", throwIfNotFound: true);
+        m_Create_Destroy = m_Create.FindAction("Destroy", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,6 +435,47 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
         }
     }
     public GlobalActions @Global => new GlobalActions(this);
+
+    // Create
+    private readonly InputActionMap m_Create;
+    private ICreateActions m_CreateActionsCallbackInterface;
+    private readonly InputAction m_Create_Create;
+    private readonly InputAction m_Create_Destroy;
+    public struct CreateActions
+    {
+        private @GlobalControls m_Wrapper;
+        public CreateActions(@GlobalControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Create => m_Wrapper.m_Create_Create;
+        public InputAction @Destroy => m_Wrapper.m_Create_Destroy;
+        public InputActionMap Get() { return m_Wrapper.m_Create; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CreateActions set) { return set.Get(); }
+        public void SetCallbacks(ICreateActions instance)
+        {
+            if (m_Wrapper.m_CreateActionsCallbackInterface != null)
+            {
+                @Create.started -= m_Wrapper.m_CreateActionsCallbackInterface.OnCreate;
+                @Create.performed -= m_Wrapper.m_CreateActionsCallbackInterface.OnCreate;
+                @Create.canceled -= m_Wrapper.m_CreateActionsCallbackInterface.OnCreate;
+                @Destroy.started -= m_Wrapper.m_CreateActionsCallbackInterface.OnDestroy;
+                @Destroy.performed -= m_Wrapper.m_CreateActionsCallbackInterface.OnDestroy;
+                @Destroy.canceled -= m_Wrapper.m_CreateActionsCallbackInterface.OnDestroy;
+            }
+            m_Wrapper.m_CreateActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Create.started += instance.OnCreate;
+                @Create.performed += instance.OnCreate;
+                @Create.canceled += instance.OnCreate;
+                @Destroy.started += instance.OnDestroy;
+                @Destroy.performed += instance.OnDestroy;
+                @Destroy.canceled += instance.OnDestroy;
+            }
+        }
+    }
+    public CreateActions @Create => new CreateActions(this);
     private int m_XRControllerSchemeIndex = -1;
     public InputControlScheme XRControllerScheme
     {
@@ -406,5 +499,10 @@ public partial class @GlobalControls : IInputActionCollection2, IDisposable
     public interface IGlobalActions
     {
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface ICreateActions
+    {
+        void OnCreate(InputAction.CallbackContext context);
+        void OnDestroy(InputAction.CallbackContext context);
     }
 }

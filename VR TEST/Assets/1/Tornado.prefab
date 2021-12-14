@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 60
-  explosionForce: 300
+  explosionForce: 154.8
   Damage: 100
 --- !u!136 &6743581009219327380
 CapsuleCollider:

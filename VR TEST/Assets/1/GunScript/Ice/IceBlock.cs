@@ -10,7 +10,10 @@ public class IceBlock : MonoBehaviour
     private IceEffect _iceEffect;
     private Collider otherCol;
     private Collider _collider;
+    private SystemicProperties _systemicProperties;
 
+    private int seconds = 8;
+    private int doubleSeconds;
     private void OnEnable()
     {
         _iceEffect = GetComponent<IceEffect>();
@@ -20,9 +23,11 @@ public class IceBlock : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         StartCoroutine(Timer());
-        Destroy(gameObject, 8);
-        
-        
+   
+        _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
+        doubleSeconds = seconds * 2;
+
+
     }
 
     IEnumerator Timer()
@@ -33,6 +38,21 @@ public class IceBlock : MonoBehaviour
 
     private void Update()
     {
+        if (_systemicProperties.snow != true)
+        {
+            Destroy(gameObject, seconds);
+        }
+
+        else
+        {
+            Destroy(gameObject, doubleSeconds);
+        }
+
+
+        if (_systemicProperties.Temperature > 500)
+        {
+            Destroy(gameObject, 0.01f);
+        }
         
     }
 

@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
         var center = _xrOrigin.CameraInOriginSpacePos;
         _collider.center = new Vector3(center.x,_xrOrigin.CameraInOriginSpaceHeight /2 , center.z);
         _collider.height = _xrOrigin.CameraInOriginSpaceHeight;
+        
+        if (gameObject.transform.position.y < -50)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnJump(InputAction.CallbackContext obj)
