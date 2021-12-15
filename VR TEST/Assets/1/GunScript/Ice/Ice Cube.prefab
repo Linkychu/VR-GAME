@@ -116,6 +116,7 @@ MonoBehaviour:
   objectCol: {fileID: 0}
   objectRb: {fileID: 0}
   iceBlocks: []
+  FreezeWater: 0
 --- !u!54 &-7399486758252344391
 Rigidbody:
   m_ObjectHideFlags: 0

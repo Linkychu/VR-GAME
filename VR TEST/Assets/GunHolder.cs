@@ -88,7 +88,7 @@ public class GunHolder : MonoBehaviour
     {
         if (buttonCount == 0)
         {
-            Debug.Log("Hands");
+            
             hands.SetActive(true);
             gun1.SetActive(false);
             gun2.SetActive(false);
@@ -98,7 +98,7 @@ public class GunHolder : MonoBehaviour
         
         if (buttonCount == 1)
         {
-            Debug.Log("Wind");
+        
             hands.SetActive(false);
             gun1.SetActive(true);
             gun2.SetActive(false);
@@ -108,7 +108,7 @@ public class GunHolder : MonoBehaviour
             
         if (buttonCount == 2)
         {
-            Debug.Log("Ice");
+            
             hands.SetActive(false);
             gun1.SetActive(false);
             gun2.SetActive(true);
@@ -118,7 +118,7 @@ public class GunHolder : MonoBehaviour
         
         if (buttonCount == 3)
         {
-            Debug.Log("Electric");
+        
             hands.SetActive(false);
             gun1.SetActive(false);
             gun2.SetActive(false);
@@ -128,7 +128,7 @@ public class GunHolder : MonoBehaviour
             
         if (buttonCount == 4)
         {
-            Debug.Log("Fire");
+           
             hands.SetActive(false);
             gun1.SetActive(false);
             gun2.SetActive(false);

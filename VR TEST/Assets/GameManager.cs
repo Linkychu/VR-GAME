@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
@@ -25,24 +26,29 @@ public class GameManager : MonoBehaviour
 
     private Vector3 spawnCoords;
 
+    private float globalSpeed;
+
+    public int waveCount;
+
     private float spawnCoordsX;
     private float spawnCoordsZ;
 
     public GameObject EnemiesSpawn;
-    
+    private FollowPlayer cubeAI;
     
 
     // Start is called before the first frame update
     void Start()
     {
         actionReference.action.performed += Pause;
-        
+        waveCount = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       Debug.Log(EnemiesSpawn.transform.childCount);
+      
         StartCoroutine(SpawnHealth());
         SpawnCoords();
         CheckForEnemies();
@@ -68,18 +74,20 @@ public class GameManager : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        Debug.Log("this is working");
+     
         Destroy(EnemiesSpawn);
 
         Vector3 spawnCoords = new Vector3(0,9.03999996f,12.1800003f);
         Vector3 spawnRotation = new Vector3(0, 0, 180);
         EnemiesSpawn = Instantiate(WavePrefab, spawnCoords, Quaternion.identity);
+        waveCount += 1;
     }
 
     void CheckForEnemies()
     {
         if (EnemiesSpawn.transform.childCount == 0)
         {
+            cubeAI = EnemiesSpawn.GetComponentInChildren<FollowPlayer>();
             SpawnEnemies();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class objectcreate : MonoBehaviour
 {
@@ -14,8 +15,9 @@ public class objectcreate : MonoBehaviour
     [SerializeField] private InputActionProperty deleteActionReference;
     public Rigidbody objectPrefab;
     private GunHolder gunHolder;
+    [SerializeField] private XRRayInteractor rayInteractor;
 
-
+    bool abletospawn;
  
     private int weaponNumber;
 
@@ -44,14 +46,18 @@ public class objectcreate : MonoBehaviour
             GameObject[] objectInstantiates = GameObject.FindGameObjectsWithTag("Instantiated");
             float NumberofIns = objectInstantiates.Length;
 
-            bool abletospawn;
+           
             if (NumberofIns < 10)
             {
                 abletospawn = true;
             }
 
             weaponNumber = gunHolder.buttonCount;
-            Rigidbody objectIns = Instantiate(objectPrefab, transform.position + Distance, transform.rotation);
+
+            if (abletospawn)
+            {
+                Rigidbody objectIns = Instantiate(objectPrefab, transform.position + Distance, transform.rotation);
+            }
 
 
 
@@ -67,10 +73,11 @@ public class objectcreate : MonoBehaviour
     {
         if (weaponNumber == 0)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.forward, out hit, 10f, instantiated))
+            
+            if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
             {
-                Destroy(hit.transform);
+               ObjectInstant TargetObject = hit.transform.GetComponent<ObjectInstant>();
+               TargetObject.DeleteObject();
             }
         }
     }

@@ -16,6 +16,7 @@ TagManager:
   - NavemeshEnemies
   - Instantiated
   - GameManager
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - CVDFilter
   - Fire
   - instantiated
-  - 
+  - Water
   - 
   - 
   - 

@@ -49,6 +49,11 @@ public class SimpleFire : MonoBehaviour
         {
             seconds = seconds * 2;
         }
+
+        if (other.gameObject.CompareTag("Water"))
+        {
+           seconds = seconds / 4; 
+        }
     }
     
     

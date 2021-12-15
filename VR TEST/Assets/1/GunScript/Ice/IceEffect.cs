@@ -18,6 +18,7 @@ public class IceEffect : MonoBehaviour
     public GameObject[] iceBlocks;
     private float numberOfIceBlocks;
     private SystemicProperties _systemicProperties;
+    public bool FreezeWater;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,33 +40,16 @@ public class IceEffect : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         
-        iceBlocks = GameObject.FindGameObjectsWithTag("IceBlock");
-        numberOfIceBlocks = iceBlocks.Length;
-        objectRb = other.gameObject.GetComponent<Rigidbody>();
-            if (other.rigidbody != null && !(other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Ice")))
+            if (other.gameObject.CompareTag("Water"))
             {
-                objectTransform = other.gameObject.transform;
-                objectCol = other.gameObject.GetComponent<Collider>();
-
-               // if (numberOfIceBlocks < 1)
-                //{
-                    GameObject InstantiatedIce = Instantiate(iceBlock,
-                        other.transform.position + new Vector3(0, 0.1f, 0), transform.rotation);
-                    _iceBlock = InstantiatedIce.GetComponent<IceBlock>();
-                    InstantiatedIce.transform.localScale = 1.1f * objectTransform.localScale;
-                //}
-
-               //if (numberOfIceBlocks > 1)
-              // {
-             //      Destroy(iceBlocks[2]);
-              // }
-
+                FreezeWater = true;
             }
 
 
             if (other.gameObject.CompareTag("Fire"))
             {
                 Destroy(gameObject);
+                
             }
             
             

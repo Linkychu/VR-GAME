@@ -30,7 +30,10 @@ public class Lightningimpact : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject instantiate = Instantiate(ExplosionGameObject, transform.position, Quaternion.identity);
-        GameObject Fire = Instantiate(fireObject, transform.position, Quaternion.identity);
+
+
+        Vector3 fireSpawn = new Vector3(0, 7, 0);
+        GameObject Fire = Instantiate(fireObject, transform.position - fireSpawn, Quaternion.identity);
         Destroy(instantiate, 1f);
         Destroy(gameObject);
         Shock();

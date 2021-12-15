@@ -24,7 +24,14 @@ public class FireEffect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject, 2);
-        
+        if (other.gameObject.CompareTag("Water"))
+        {
+            Destroy(gameObject, 0.0000001f);
+        }
+
+        else
+        {
+            Destroy(gameObject, 2);
+        }
     }
 }

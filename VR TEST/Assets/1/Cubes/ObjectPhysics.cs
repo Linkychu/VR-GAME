@@ -22,6 +22,7 @@ public class ObjectPhysics : MonoBehaviour
     private int firedps = 1;
 
     private SystemicProperties _systemicProperties;
+    private isFreezable _freezable;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class ObjectPhysics : MonoBehaviour
 
         initialColour = GetComponent<Renderer>().material.color;
         _flammable = GetComponent<isFlammable>();
+        _freezable = GetComponent<isFreezable>();
         _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
     }
 
@@ -48,26 +50,24 @@ public class ObjectPhysics : MonoBehaviour
         {
             _renderer.material.color = Color.red;
             cubeHealth.EnemyDamage(firedps);
-            StartCoroutine(ResetColour());
+            StartCoroutine(ResetFireColour());
         }
 
         if (gameObject.transform.position.y < -50)
         {
             Destroy(gameObject);
         }
+
+        if (_freezable.Frozen)
+        {
+            Ice();
+            cubeHealth.EnemyDamage(dps);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ice"))
-        {
-            objectTrans = other.gameObject.GetComponent<Transform>();
-            if (other.gameObject.CompareTag("Ice"))
-            {
-               
-                Ice();
-            }
-        }
+       
 
         if (other.gameObject.CompareTag("Electricity"))
         {
@@ -80,7 +80,10 @@ public class ObjectPhysics : MonoBehaviour
     {
         yield return new WaitForSeconds(6);
         rb.constraints = RigidbodyConstraints.None;
+        rb.WakeUp();
+        rb.isKinematic = false;
         _renderer.material.color = initialColour;
+        
     }
     
 
@@ -88,21 +91,12 @@ public class ObjectPhysics : MonoBehaviour
     {
         rb.velocity = new Vector3(0, 0, 0);
         _renderer.material.color = Color.cyan;
-        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-        boxCollider.size = new Vector3(objectTrans.localScale.x, objectTrans.localScale.y, objectTrans.localScale.z);
         frozen = true;
-        StartCoroutine(IceWait());
+
+        StartCoroutine(ResetIceColour());
 
     }
-
-    IEnumerator IceWait()
-    {
-        yield return new WaitForSeconds(10);
-        rb.constraints = RigidbodyConstraints.None;
-        boxCollider.size = new Vector3(1, 1, 1);
-        frozen = false;
-        _renderer.material.color = initialColour;
-    }
+    
 
     IEnumerator DamagePerSecond()
     {
@@ -114,17 +108,27 @@ public class ObjectPhysics : MonoBehaviour
 
     }
 
-    IEnumerator ResetColour()
+    IEnumerator ResetFireColour()
     {
         yield return new WaitUntil(() => _flammable.onFire == false);
         _renderer.material.color = initialColour;
     }
 
+    IEnumerator ResetIceColour()
+    {
+        yield return new WaitUntil(() => _freezable.Frozen == false);
+        _renderer.material.color = initialColour;
+        frozen = false;
+    }
+    
+
     public void Electricity()
     {
         rb.velocity = new Vector3(0, 0, 0);
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.Sleep();
         _renderer.material.color = Color.yellow;
+        rb.isKinematic = true;
         StartCoroutine(ShockTimer());
     }
 }

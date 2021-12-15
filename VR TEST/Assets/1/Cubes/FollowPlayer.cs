@@ -12,6 +12,9 @@ public class FollowPlayer : MonoBehaviour
     private Rigidbody rb;
     private Vector3 movement;
     private GameObject player;
+    private GameManager _gameManager;
+
+    private isFreezable _freezable;
 
     
 
@@ -21,6 +24,11 @@ public class FollowPlayer : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
         target = player.GetComponent<Transform>();
+        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+
+        moveSpeed = moveSpeed + _gameManager.waveCount;
+
+        _freezable = GetComponent<isFreezable>();
 
 
     }
@@ -46,6 +54,6 @@ public class FollowPlayer : MonoBehaviour
     }
     void moveCharacter(Vector3 direction)
     {
-        rb.MovePosition((Vector3)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector3) transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 }

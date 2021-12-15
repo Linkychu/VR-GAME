@@ -46,17 +46,12 @@ public class TeleportationManager : MonoBehaviour
             return;
         }
 
-        // TeleportRequest request = new TeleportRequest()
-        // {
-        //     destinationPosition = hit.point,
-        //     //     destinationRotation = ,
-        //     //     // matchOrientation = , 
-        //     //     // requestTime = ,
-        //     //     
-        //     // }
-        //     // ;
-        //     // provider.QueueTeleportRequest()
-        // };
+        TeleportRequest request = new TeleportRequest()
+        {
+            destinationPosition = hit.point,
+        };
+        provider.QueueTeleportRequest(request);
+    
     }
 
     void OnTeleportActivate(InputAction.CallbackContext context)

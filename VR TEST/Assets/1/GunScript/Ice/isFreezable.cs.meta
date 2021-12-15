@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: db6f6de4bb7c32c41b2a9b411d64948c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

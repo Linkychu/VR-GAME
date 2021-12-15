@@ -23,11 +23,14 @@ public class SystemicProperties : MonoBehaviour
     private bool Spawn;
     private int Seed;
 
+    private GameObject[] fireList;
     public GameObject rain;
     public bool windd;
     public bool sun;
     public bool snow;
     public bool thunder;
+
+    private int i = 0;
 
 
     public GameObject lightning;
@@ -39,6 +42,8 @@ public class SystemicProperties : MonoBehaviour
 
    public ParticleSystem rainW;
 
+   public ParticleSystem snowW;
+   public GameObject snowflake;
 
 
    private Vector3 spawnCoords;
@@ -57,10 +62,22 @@ public class SystemicProperties : MonoBehaviour
 
         if (sun == true)
         {
-            Temperature += 50;
+            Temperature += 10;
         }
         SeedFinder();
-        
+
+        fireList = GameObject.FindGameObjectsWithTag("Fire");
+
+        if (snow == true)
+        {
+            Temperature -= 10;
+        }
+        if (fireList.Length > 10)
+        {
+            i = 11;
+            Destroy(fireList[i], 0.002f);
+        }
+    
 
 
     }
@@ -89,7 +106,7 @@ public class SystemicProperties : MonoBehaviour
 
             while (count == 0)
             {
-                Rng = Random.Range(0, 4);
+                Rng = Random.Range(0, 10);
             
                 switch (Rng)
                 {
@@ -108,6 +125,13 @@ public class SystemicProperties : MonoBehaviour
                     }
 
                     case 3:
+                    {
+                        count += 1;
+                        Randomise();
+                        break;
+                    }
+
+                    case 4:
                     {
                         count += 1;
                         Randomise();
@@ -144,7 +168,11 @@ public class SystemicProperties : MonoBehaviour
         {
             Lightning();
         }
-        
+
+        if (Rng == 4 & Spawn && count == 1)
+        {
+            Cold();
+        }
         
     }
 
@@ -172,6 +200,8 @@ public class SystemicProperties : MonoBehaviour
             {
                 yield return new WaitForSeconds(timer);
                 Destroy(windCopy, 0f);
+                rain.SetActive(false);
+                rainW.Stop();
                 Rng = Random.Range(0, 4);
                 Seed = Random.Range(0, 101);
                 StartCoroutine(Reset());
@@ -186,6 +216,23 @@ public class SystemicProperties : MonoBehaviour
         sun = true;
         StartCoroutine(Reset());
 
+    }
+
+    public void Cold()
+    {
+        RenderSettings.skybox = Snow;
+        snow = true;
+        snowflake.SetActive(true);
+        snowW.Play();
+        StartCoroutine(SnowTimer());
+
+        IEnumerator SnowTimer()
+        {
+            yield return new WaitForSeconds(timer);
+            snowW.Stop();
+            snowflake.SetActive(false);
+            StartCoroutine(Reset());
+        }
     }
 
     public void Lightning()
@@ -206,6 +253,8 @@ public class SystemicProperties : MonoBehaviour
             yield return new WaitForSeconds(timer / 4);
             Rng = Random.Range(0, 4);
             Seed = Random.Range(0, 101);
+            rain.SetActive(false);
+            rainW.Stop();
             StartCoroutine(Reset());
             Destroy(lightningCopy, 0.00000001f);
             
@@ -231,6 +280,7 @@ public class SystemicProperties : MonoBehaviour
         SeedFinder();
         rain.SetActive(false);
         rainW.Stop();
+        
                     
     }
 }

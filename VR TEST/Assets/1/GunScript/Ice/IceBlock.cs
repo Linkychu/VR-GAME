@@ -16,43 +16,43 @@ public class IceBlock : MonoBehaviour
     private int doubleSeconds;
     private void OnEnable()
     {
-        _iceEffect = GetComponent<IceEffect>();
+        //_iceEffect = GetComponent<IceEffect>();
     }
 
     private void Start()
     {
         _collider = GetComponent<Collider>();
-        StartCoroutine(Timer());
+       // StartCoroutine(Timer());
    
         _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
-        doubleSeconds = seconds * 2;
+       // doubleSeconds = seconds * 2;
 
 
     }
 
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(9.9f);
-
-    }
+    // IEnumerator Timer()
+    // {
+    //     //yield return new WaitForSeconds(9.9f);
+    //
+    // }
 
     private void Update()
     {
-        if (_systemicProperties.snow != true)
-        {
-            Destroy(gameObject, seconds);
-        }
-
-        else
-        {
-            Destroy(gameObject, doubleSeconds);
-        }
-
-
-        if (_systemicProperties.Temperature > 500)
-        {
-            Destroy(gameObject, 0.01f);
-        }
+        // if (_systemicProperties.snow != true)
+        // {
+        //     Destroy(gameObject, seconds);
+        // }
+        //
+        // else
+        // {
+        //     Destroy(gameObject, doubleSeconds);
+        // }
+        //
+        //
+        // if (_systemicProperties.Temperature > 500)
+        // {
+        //     Destroy(gameObject, 0.01f);
+        // }
         
     }
 

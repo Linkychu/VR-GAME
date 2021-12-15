@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class isFlammable : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class isFlammable : MonoBehaviour
     private float fireSeconds = 5f;
     [SerializeField] private GameObject fireObject;
     private GameObject fire;
-    
+    private SystemicProperties _systemicProperties;
     void Start()
     {
-        
+        _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,11 @@ public class isFlammable : MonoBehaviour
         {
             fire.transform.position = gameObject.transform.position;
         }
+
+        // if (_systemicProperties.Temperature > 500)
+        // {
+        //    FireInstantiate();
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,12 +59,18 @@ public class isFlammable : MonoBehaviour
             _flammable.FireInstantiate();
            
        }
+
+       if (other.gameObject.CompareTag("Water"))
+       {
+           StartCoroutine(Water());
+       }
        
 
     }
 
         public void FireInstantiate()
     {
+        
         fire = Instantiate(fireObject, gameObject.transform.position,Quaternion.identity);
         fire.transform.localScale = gameObject.transform.localScale * 4f;
         onFire = true;
@@ -71,5 +83,12 @@ public class isFlammable : MonoBehaviour
         yield return new WaitForSeconds(fireSeconds);
         onFire = false;
         Destroy(fire);
+    }
+
+    IEnumerator Water()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(fire);
+        onFire = false;
     }
 }
