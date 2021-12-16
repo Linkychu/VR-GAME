@@ -38,7 +38,7 @@ public class waterRaise : MonoBehaviour
 
     private Rigidbody rb;
 
-    private Collider otherWaterCol;
+    public Collider otherWaterCol;
 
     private Renderer waterRend;
     private Renderer waterRend2;
@@ -70,8 +70,7 @@ public class waterRaise : MonoBehaviour
         animator = GetComponent<Animator>();
 
         rb = GetComponent<Rigidbody>();
-
-        otherWaterCol = GetComponentInChildren<Collider>();
+        
 
         waterRend = GetComponent<Renderer>();
         waterRend2 = GetComponentInChildren<Renderer>();

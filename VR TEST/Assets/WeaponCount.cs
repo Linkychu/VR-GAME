@@ -22,20 +22,17 @@ public class WeaponCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (i >10)
-        {
-            i = 0;
-        }
-
-        if (i < -10)
-        {
-            i = transform.childCount;
-        }
+     
     }
     
     private void VRInputUp(InputAction.CallbackContext obj)
     {
+
         i++;
+        
+
+
+
     }
     
     private void VRInputDown(InputAction.CallbackContext obj)

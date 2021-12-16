@@ -55,6 +55,13 @@ public class GunHolder : MonoBehaviour
         private InputAction SelectGun;
 
         private int i = 0;
+
+        public GameObject[] weapons;
+
+        private int currentselectedWeapon;
+        
+        [SerializeField] private InputActionProperty PrimaryActionReference;
+        [SerializeField] private InputActionProperty SecondaryActionReference;
     // Start is called before the first frame update
 
     private void Awake()
@@ -67,75 +74,100 @@ public class GunHolder : MonoBehaviour
     {
 
 
+         currentselectedWeapon = 0;
         numbers = GetComponent<WeaponCount>();
         controller = GetComponentInParent<ActionBasedController>();
        // buttonCount = 0;
-       WeaponCalculate();
+       weapons[currentselectedWeapon].gameObject.SetActive(true);
+       PrimaryActionReference.action.performed += VRInputUp;
+       SecondaryActionReference.action.performed += VRInputDown;
+      
 
 
 
     }
 
+    private void VRInputUp(InputAction.CallbackContext obj)
+    {
+        buttonCount = currentselectedWeapon;
+        buttonCount++;
+        buttonCount %= weapons.Length;
+        WeaponSwitch(buttonCount);
+    }
+
+    private void VRInputDown(InputAction.CallbackContext obj)
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        buttonCount = numbers.i;
-        WeaponCalculate();
+        
+      
     }
-    
-    
-    void WeaponCalculate()
-    {
-        if (buttonCount == 0)
-        {
-            
-            hands.SetActive(true);
-            gun1.SetActive(false);
-            gun2.SetActive(false);
-            gun3.SetActive(false);
-            gun4.SetActive(false);
-        }
-        
-        if (buttonCount == 1)
-        {
-        
-            hands.SetActive(false);
-            gun1.SetActive(true);
-            gun2.SetActive(false);
-            gun3.SetActive(false);
-            gun4.SetActive(false);
-        }
-            
-        if (buttonCount == 2)
-        {
-            
-            hands.SetActive(false);
-            gun1.SetActive(false);
-            gun2.SetActive(true);
-            gun3.SetActive(false);
-            gun4.SetActive(false);
-        }
-        
-        if (buttonCount == 3)
-        {
-        
-            hands.SetActive(false);
-            gun1.SetActive(false);
-            gun2.SetActive(false);
-            gun3.SetActive(true);
-            gun4.SetActive(false);
-        }
-            
-        if (buttonCount == 4)
-        {
-           
-            hands.SetActive(false);
-            gun1.SetActive(false);
-            gun2.SetActive(false);
-            gun3.SetActive(false);
-            gun4.SetActive(true);
-        }
-            
 
+
+    void WeaponSwitch(int weaponIndex)
+    {
+        weapons[currentselectedWeapon].gameObject.SetActive(false);
+        weapons[weaponIndex].gameObject.SetActive(true);
+        currentselectedWeapon = weaponIndex;
     }
+    
+    
+
+    // void WeaponCalculate(int WeaponIndex)
+    // {
+    //     if (buttonCount == 0)
+    //     {
+    //
+    //         hands.SetActive(true);
+    //         gun1.SetActive(false);
+    //         gun2.SetActive(false);
+    //         gun3.SetActive(false);
+    //         gun4.SetActive(false);
+    //     }
+    //
+    //     if (buttonCount == 1)
+    //     {
+    //
+    //         hands.SetActive(false);
+    //         gun1.SetActive(true);
+    //         gun2.SetActive(false);
+    //         gun3.SetActive(false);
+    //         gun4.SetActive(false);
+    //     }
+    //
+    //     if (buttonCount == 2)
+    //     {
+    //
+    //         hands.SetActive(false);
+    //         gun1.SetActive(false);
+    //         gun2.SetActive(true);
+    //         gun3.SetActive(false);
+    //         gun4.SetActive(false);
+    //     }
+    //
+    //     if (buttonCount == 3)
+    //     {
+    //
+    //         hands.SetActive(false);
+    //         gun1.SetActive(false);
+    //         gun2.SetActive(false);
+    //         gun3.SetActive(true);
+    //         gun4.SetActive(false);
+    //     }
+    //
+    //     if (buttonCount == 4)
+    //     {
+    //
+    //         hands.SetActive(false);
+    //         gun1.SetActive(false);
+    //         gun2.SetActive(false);
+    //         gun3.SetActive(false);
+    //         gun4.SetActive(true);
+    //     }
+    //
+    //
+    // }
 }
