@@ -50,7 +50,7 @@ public class ShootWind : MonoBehaviour
     {
         
         weaponNumber = gunHolder.buttonCount;
-        if (weaponNumber == 1)
+        if (gameObject.activeInHierarchy == true)
             {
                 Rigidbody wind = Instantiate(windPrefab, origin.transform.position, Quaternion.identity);
                 wind.velocity = transform.TransformDirection(Vector3.up * 20);

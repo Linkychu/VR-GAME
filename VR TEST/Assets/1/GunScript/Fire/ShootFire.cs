@@ -40,7 +40,7 @@ public class ShootFire : MonoBehaviour
     void Shootfire(InputAction.CallbackContext context)
     {
         weaponNumber = gunHolder.buttonCount;
-        if (weaponNumber == 4)
+        if (gameObject.activeInHierarchy == true)
         {
             Rigidbody fire = Instantiate(firePrefab, origin2, origin.transform.rotation);
             fire.velocity = transform.TransformDirection(Vector3.forward * 20);

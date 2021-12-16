@@ -24,6 +24,8 @@ public class WindEffect : MonoBehaviour
 
     private CubesWind cubes;
     private SystemicProperties _systemicProperties;
+    private Renderer renderer;
+    
 
     private void Start()
     {
@@ -41,6 +43,14 @@ public class WindEffect : MonoBehaviour
         if (!other.gameObject.CompareTag("Player"))
         {
             GameObject instantiate = Instantiate(windExplosionGameObject, transform.position, Quaternion.identity);
+            Renderer instRend = instantiate.GetComponent<Renderer>();
+
+            // if (_systemicProperties.windd)
+            // {
+            //     instRend.material.color = Color.blue;
+            //     instantiate.transform.localScale  = instantiate.transform.localScale * (float) 1.5;
+            //     Destroy(instantiate, 3f);
+            // }
             Destroy(instantiate, 1f);
             //CubesWind cubesWind = other.gameObject.GetComponent<CubesWind>();
             //cubesWind.WindPhysics();
@@ -57,6 +67,9 @@ public class WindEffect : MonoBehaviour
         {
             radius = radius * 2;
             explosionForce = explosionForce * 2;
+            speed = speed * 2;
+            renderer.material.color = Color.blue;
+
         }
         
         
@@ -67,7 +80,7 @@ public class WindEffect : MonoBehaviour
             
             if (HitRig != null)
             {
-                HitRig.AddExplosionForce(explosionForce, transform.position, radius , UnityEngine.Random.Range(explosionForce/4 , explosionForce / 2));
+                HitRig.AddExplosionForce(explosionForce, transform.position, radius , UnityEngine.Random.Range(explosionForce/2 , explosionForce));
                 Destroy(gameObject, 2f);
             }
         }

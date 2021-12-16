@@ -71,7 +71,7 @@ MonoBehaviour:
   speed: 2
   windExplosionGameObject: {fileID: 280549367166038772, guid: 1bf433f5c8c4ab94ca4d08ccff86d89b, type: 3}
   radius: 5
-  explosionForce: 600
+  explosionForce: 800
   Damage: 100
 --- !u!54 &2815807695262077782
 Rigidbody:
@@ -193,7 +193,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: dceb7596c2dee7446b201d00479f9ced, type: 3}
+  - {fileID: 2100000, guid: b78e25a86fc98334d8d276d5074c4326, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

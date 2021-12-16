@@ -74,7 +74,7 @@ public class ShootElectricity : MonoBehaviour
         // {
         weaponNumber = gunHolder.buttonCount;
                 
-            if (weaponNumber == 3)
+            if (gameObject.activeInHierarchy)
             {
                 Debug.Log("working");
                 Rigidbody electricity;

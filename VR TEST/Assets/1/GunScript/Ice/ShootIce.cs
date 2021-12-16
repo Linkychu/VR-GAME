@@ -48,7 +48,7 @@ public class ShootIce : MonoBehaviour
     {
         
         weaponNumber = gunHolder.buttonCount;
-            if (weaponNumber == 2)
+            if (gameObject.activeInHierarchy == true)
             {
                 Rigidbody ice = Instantiate(icePrefab, origin2, origin.transform.rotation);
                 ice.velocity = transform.TransformDirection(Vector3.up * 20);

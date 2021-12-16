@@ -47,24 +47,24 @@ public class objectcreate : MonoBehaviour
             float NumberofIns = objectInstantiates.Length;
 
            
-            if (NumberofIns < 10)
-            {
-                abletospawn = true;
-            }
+            // if (NumberofIns < 10)
+            // {
+            //     abletospawn = true;
+            // }
 
             weaponNumber = gunHolder.buttonCount;
 
-            if (abletospawn)
-            {
+            // if (abletospawn)
+            // {
                 Rigidbody objectIns = Instantiate(objectPrefab, transform.position + Distance, transform.rotation);
-            }
+           // }
 
 
 
-            if (NumberofIns > 10)
-            {
-                abletospawn = false;
-            }
+            // if (NumberofIns > 10)
+            // {
+            //     abletospawn = false;
+            // }
         }
 
     }

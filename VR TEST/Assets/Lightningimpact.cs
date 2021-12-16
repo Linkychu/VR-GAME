@@ -7,9 +7,9 @@ public class Lightningimpact : MonoBehaviour
 {
     private Rigidbody lightningRb;
 
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float speed = 1000;
 
-    [SerializeField] private float radius = 20;
+    [SerializeField] private float radius = 100;
 
     [SerializeField] private float explosionForce = 150;
     // Start is called before the first frame update
@@ -32,8 +32,9 @@ public class Lightningimpact : MonoBehaviour
         GameObject instantiate = Instantiate(ExplosionGameObject, transform.position, Quaternion.identity);
 
 
-        Vector3 fireSpawn = new Vector3(0, 7, 0);
+        Vector3 fireSpawn = new Vector3(1, -1, 1);
         GameObject Fire = Instantiate(fireObject, transform.position - fireSpawn, Quaternion.identity);
+        Fire.transform.localScale = Fire.transform.localScale * 4;
         Destroy(instantiate, 1f);
         Destroy(gameObject);
         Shock();

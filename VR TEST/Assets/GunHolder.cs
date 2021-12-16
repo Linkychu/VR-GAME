@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.iOS;
@@ -25,6 +26,7 @@ public class GunHolder : MonoBehaviour
     public GameObject gun3;
     public GameObject gun4;
 
+    
     public GameObject hands;
     private InputDevice targetDevice;
     private float SecondaryInput;
@@ -48,15 +50,14 @@ public class GunHolder : MonoBehaviour
     private int previousSelectedWeapon;
 
     private WeaponCount numbers;
-   
-
+    
     private int timer = 0;
         
         private InputAction SelectGun;
 
         private int i = 0;
 
-        public GameObject[] weapons;
+        public List<GameObject> weapons = new List<GameObject>();
 
         private int currentselectedWeapon;
         
@@ -91,7 +92,7 @@ public class GunHolder : MonoBehaviour
     {
         buttonCount = currentselectedWeapon;
         buttonCount++;
-        buttonCount %= weapons.Length;
+        buttonCount %= weapons.Count;
         WeaponSwitch(buttonCount);
     }
 
@@ -107,6 +108,41 @@ public class GunHolder : MonoBehaviour
     }
 
 
+    public void WindInstantiate()
+    {
+        Vector3 rot = new Vector3(90, 90, 90);
+        GameObject windG = Instantiate(gun1, hands.transform.position, Quaternion.identity);
+        windG.transform.Rotate(rot);
+        windG.transform.parent = gameObject.transform;
+        weapons.Add(windG as GameObject);
+    }
+
+    public void ElectricInstantiate()
+    {
+        Vector3 rot = new Vector3(00, 00, 00);
+        GameObject electricG = Instantiate(gun3, hands.transform.position, Quaternion.identity);
+        electricG.transform.Rotate(rot);
+        electricG.transform.parent = gameObject.transform;
+        weapons.Add(electricG);
+    }
+
+    public void FireInstantiate()
+    {
+        Vector3 rot = new Vector3(00, 00, 00);
+        GameObject fireG = Instantiate(gun4, hands.transform.position, Quaternion.identity);
+        fireG.transform.Rotate(rot);
+        fireG.transform.parent = gameObject.transform;
+        weapons.Add(fireG);
+    }
+
+    public void IceInstantiate()
+    {
+        Vector3 rot = new Vector3(90, 90, 90);
+        GameObject iceG = Instantiate(gun2, hands.transform.position, Quaternion.identity);
+        iceG.transform.Rotate(rot);
+        iceG.transform.parent = gameObject.transform;
+        weapons.Add(iceG);
+    }
     void WeaponSwitch(int weaponIndex)
     {
         weapons[currentselectedWeapon].gameObject.SetActive(false);
@@ -116,6 +152,7 @@ public class GunHolder : MonoBehaviour
     
     
 
+    
     // void WeaponCalculate(int WeaponIndex)
     // {
     //     if (buttonCount == 0)

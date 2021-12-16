@@ -48,7 +48,7 @@ public class waterRaise : MonoBehaviour
 
     public bool Frozen;
 
-    private PhysicMaterial bouncy;
+    [SerializeField]private PhysicMaterial bouncy;
 
     public LayerMask waterL;
 
@@ -75,10 +75,12 @@ public class waterRaise : MonoBehaviour
         waterRend = GetComponent<Renderer>();
         waterRend2 = GetComponentInChildren<Renderer>();
 
-        bouncy = GetComponentInChildren<PhysicMaterial>();
+        
 
         water2 = GetComponentInChildren<GameObject>();
 
+        
+        
     }
 
     // Update is called once per frame
@@ -95,7 +97,7 @@ public class waterRaise : MonoBehaviour
             Unfreeze();
         }
         
-        if (waterObject.activeInHierarchy == true)
+        if (waterObject.activeInHierarchy == true && !Frozen)
         {
 
            animator.Play("WaterIncrease");
@@ -114,8 +116,11 @@ public class waterRaise : MonoBehaviour
     
     IEnumerator LowerWater()
     {
-        yield return new  WaitUntil(() => waterObject.activeInHierarchy == false);
-        animator.Play("WaterDecrease");
+        if (!Frozen)
+        {
+            yield return new WaitUntil(() => waterObject.activeInHierarchy == false);
+            animator.Play("WaterDecrease");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -135,6 +140,8 @@ public class waterRaise : MonoBehaviour
                 Unfreeze();
             }
         }
+        
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -168,8 +175,8 @@ public class waterRaise : MonoBehaviour
         waterRend.material = iceM;
         waterRend2.material = iceM;
         otherWaterCol.material = ice;
-        gameObject.layer = iceL;
-        water2.layer = iceL;
+        gameObject.layer = 9;
+        water2.layer = 9;
         gameObject.tag = "Ice";
         water2.tag = "Ice";
 
@@ -186,11 +193,33 @@ public class waterRaise : MonoBehaviour
         waterRend.material = waterM;
         waterRend2.material = water2Material;
         otherWaterCol.material = bouncy;
-        gameObject.layer = waterL;
-        water2.layer = waterL;
+        gameObject.layer = 16;
+        water2.layer = 16;
         Frozen = false;
         gameObject.tag = "Water";
         water2.tag = "Water";
+
+    }
+    
+    public void Electricity()
+    {
+        rb.velocity = new Vector3(0, 0, 0);
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.Sleep();
+        waterRend.material.color = Color.yellow;
+        waterRend2.material.color = Color.yellow;
+        rb.isKinematic = true;
+        StartCoroutine(ShockTimer());
+    }
+    
+    IEnumerator ShockTimer()
+    {
+        yield return new WaitForSeconds(6);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.WakeUp();
+        rb.isKinematic = false;
+        waterRend.material.color = waterM.color;
+        waterRend2.material.color = water2Material.color;
 
     }
 }

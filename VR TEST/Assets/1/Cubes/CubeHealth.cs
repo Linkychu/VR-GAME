@@ -60,6 +60,25 @@ public class CubeHealth : MonoBehaviour
                 EnemyDamage(ElectricDamage);
             }
         }
+        
+        if (other.gameObject.CompareTag("Wind"))
+        {
+            
+            if (_systemicProperties.windd == true)
+            {
+                EnemyDamage(WindDamage * 2);
+            }
+            else
+            {
+                EnemyDamage(WindDamage);
+            }
+
+            if (_systemicProperties.sun == true)
+            {
+                EnemyDamage(WindDamage / 1.5f);
+            }
+            
+        }
 
 
         if (other.gameObject.CompareTag("Interactable"))
