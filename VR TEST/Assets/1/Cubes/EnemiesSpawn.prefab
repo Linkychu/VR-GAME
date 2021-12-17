@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &7118884127761343652
 MonoBehaviour:
@@ -185,9 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &722337845232994970
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &6301025513191751448
 MonoBehaviour:
@@ -373,9 +375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &1403438825912844168
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &8635198062558314061
 MonoBehaviour:
@@ -561,9 +565,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &2145515962627123954
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &2270633482830526984
 MonoBehaviour:
@@ -749,9 +755,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &2910115650239280175
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &6752880231979141225
 MonoBehaviour:
@@ -937,9 +945,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &3318424882999076587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &2225058767075367279
 MonoBehaviour:
@@ -1175,9 +1185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &3571387065145218364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &1549619615191231447
 MonoBehaviour:
@@ -1363,9 +1375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &5002182874715411135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &7853151295388953634
 MonoBehaviour:
@@ -1551,9 +1565,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &5400230057509091449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &1937229855371845335
 MonoBehaviour:
@@ -1739,9 +1755,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &5447280151850442919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &3552631156292859927
 MonoBehaviour:
@@ -1927,9 +1945,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &6259568103075082104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &6040714637883076921
 MonoBehaviour:
@@ -2115,9 +2135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &6455558227448820531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,7 +2283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &5676096963687024502
 MonoBehaviour:
@@ -2303,9 +2325,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &6456157268756761437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &3476525864982199575
 MonoBehaviour:
@@ -2491,9 +2515,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &6828983124937344593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &6705348791751636474
 MonoBehaviour:
@@ -2679,9 +2705,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &7969897745016847747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,7 +2853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &5439387449105125659
 MonoBehaviour:
@@ -2867,9 +2895,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &8127842246192859005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &366387582401599962
 MonoBehaviour:
@@ -3055,9 +3085,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &8224384306886428449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &2503747543905122745
 MonoBehaviour:
@@ -3243,9 +3275,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &8659094308904479079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,7 +3423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &2536456754185916254
 MonoBehaviour:
@@ -3431,9 +3465,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &9011997762094893413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,7 +3613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &3710592243630033176
 MonoBehaviour:
@@ -3619,9 +3655,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0
 --- !u!1 &9073710589061347907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,7 +3803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 0.4
   SmoothLook: 30
 --- !u!114 &1286155234327035970
 MonoBehaviour:
@@ -3807,6 +3845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBlock: {fileID: 283468021686586720, guid: dfb209381af312d41acd13e969692712, type: 3}
+  Frozen: 1
   iceSeconds: 10
   doubleIceSeconds: 0
   seconds: 0
+  isWater: 0

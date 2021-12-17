@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Health : MonoBehaviour
     public int playerHealth = 100;
     public int Armour;
     private int Playerdamage = 10;
+    
     void Start()
     {
         
@@ -25,7 +27,7 @@ public class Health : MonoBehaviour
 
       if (playerHealth < 0)
       {
-          Destroy(gameObject);
+          SceneManager.LoadScene(1);
       }
     }
 

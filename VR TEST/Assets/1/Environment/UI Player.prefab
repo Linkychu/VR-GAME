@@ -2014,6 +2014,31 @@ MonoBehaviour:
   gun4: {fileID: 0}
   hands: {fileID: 0}
   GlobalController: {fileID: 0}
+  weapons: []
+  PrimaryActionReference:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  SecondaryActionReference:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &7005128583817427635
 GameObject:
   m_ObjectHideFlags: 0

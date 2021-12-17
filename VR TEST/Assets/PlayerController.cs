@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (gameObject.transform.position.y < -50)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(1);
         }
     }
 

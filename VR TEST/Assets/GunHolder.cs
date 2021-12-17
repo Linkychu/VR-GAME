@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.iOS;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using InputDevice = UnityEngine.XR.InputDevice;
@@ -60,7 +59,9 @@ public class GunHolder : MonoBehaviour
         public List<GameObject> weapons = new List<GameObject>();
 
         private int currentselectedWeapon;
-        
+
+
+        private int GunPickUp;
         [SerializeField] private InputActionProperty PrimaryActionReference;
         [SerializeField] private InputActionProperty SecondaryActionReference;
     // Start is called before the first frame update
@@ -81,7 +82,7 @@ public class GunHolder : MonoBehaviour
        // buttonCount = 0;
        weapons[currentselectedWeapon].gameObject.SetActive(true);
        PrimaryActionReference.action.performed += VRInputUp;
-       SecondaryActionReference.action.performed += VRInputDown;
+
       
 
 
@@ -96,10 +97,7 @@ public class GunHolder : MonoBehaviour
         WeaponSwitch(buttonCount);
     }
 
-    private void VRInputDown(InputAction.CallbackContext obj)
-    {
-        
-    }
+ 
     // Update is called once per frame
     void Update()
     {
@@ -110,38 +108,41 @@ public class GunHolder : MonoBehaviour
 
     public void WindInstantiate()
     {
-        Vector3 rot = new Vector3(90, 90, 90);
-        GameObject windG = Instantiate(gun1, hands.transform.position, Quaternion.identity);
-        windG.transform.Rotate(rot);
-        windG.transform.parent = gameObject.transform;
-        weapons.Add(windG as GameObject);
+        weapons.Add(gun1);
+        buttonCount = currentselectedWeapon;
+        buttonCount++;
+        buttonCount %= weapons.Count;
+        WeaponSwitch(buttonCount);
+        
     }
 
     public void ElectricInstantiate()
     {
-        Vector3 rot = new Vector3(00, 00, 00);
-        GameObject electricG = Instantiate(gun3, hands.transform.position, Quaternion.identity);
-        electricG.transform.Rotate(rot);
-        electricG.transform.parent = gameObject.transform;
-        weapons.Add(electricG);
+        weapons.Add(gun3);
+        buttonCount = currentselectedWeapon;
+        buttonCount++;
+        buttonCount %= weapons.Count;
+        WeaponSwitch(buttonCount);
+    
     }
 
     public void FireInstantiate()
     {
-        Vector3 rot = new Vector3(00, 00, 00);
-        GameObject fireG = Instantiate(gun4, hands.transform.position, Quaternion.identity);
-        fireG.transform.Rotate(rot);
-        fireG.transform.parent = gameObject.transform;
-        weapons.Add(fireG);
+       weapons.Add(gun4);
+   
+       buttonCount = currentselectedWeapon;
+       buttonCount++;
+       buttonCount %= weapons.Count;
+       WeaponSwitch(buttonCount);
     }
 
     public void IceInstantiate()
     {
-        Vector3 rot = new Vector3(90, 90, 90);
-        GameObject iceG = Instantiate(gun2, hands.transform.position, Quaternion.identity);
-        iceG.transform.Rotate(rot);
-        iceG.transform.parent = gameObject.transform;
-        weapons.Add(iceG);
+       weapons.Add(gun2);
+       buttonCount = currentselectedWeapon;
+       buttonCount++;
+       buttonCount %= weapons.Count;
+       WeaponSwitch(buttonCount);  
     }
     void WeaponSwitch(int weaponIndex)
     {

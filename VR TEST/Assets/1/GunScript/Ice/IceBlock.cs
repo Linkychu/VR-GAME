@@ -107,4 +107,21 @@ public class IceBlock : MonoBehaviour
         //     objectRb.constraints = RigidbodyConstraints.None;
         //     objectRb.isKinematic = false;
         // }
+
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Fire"))
+            {
+                Destroy(gameObject, 1);
+            }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Fire"))
+            {
+                Destroy(gameObject, 1);
+            }
+        }
 }

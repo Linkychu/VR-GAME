@@ -113,6 +113,18 @@ public class isFreezable : MonoBehaviour
             FreezeObject();
             StartCoroutine(IceTimer());
         }
+        
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            if (Frozen && _flammable.onFire != true)
+            {
+                Frozen = false;
+                Destroy(Ice);
+                rb.constraints = RigidbodyConstraints.None;
+            }
+        }
+        
+        
     }
 
     IEnumerator IceTimer()

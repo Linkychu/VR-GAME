@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
 
     public Transform target;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 0.1f;
     public float SmoothLook = 30f;
     private Rigidbody rb;
     private Vector3 movement;
@@ -26,7 +26,7 @@ public class FollowPlayer : MonoBehaviour
         target = player.GetComponent<Transform>();
         _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        moveSpeed = moveSpeed + _gameManager.waveCount;
+        moveSpeed = moveSpeed + (_gameManager.waveCount);
 
         _freezable = GetComponent<isFreezable>();
 

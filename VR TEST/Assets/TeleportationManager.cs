@@ -25,7 +25,7 @@ public class TeleportationManager : MonoBehaviour
         cancel.Enable();
         cancel.performed += OnTeleportCancel;
 
-        _thumbstick = actionAsset.FindActionMap("XRI LeftHand").FindAction("Teleport Mode Activate");
+        _thumbstick = actionAsset.FindActionMap("XRI LeftHand").FindAction("Move");
         _thumbstick.Enable();
     }
 

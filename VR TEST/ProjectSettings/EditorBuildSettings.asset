@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VR TEST.unity
     guid: 99e5e97a24e27ea4b8bf7260be3b28a2
+  - enabled: 1
+    path: Assets/Scenes/dead.unity
+    guid: 98e718e52aa0c25478f5bebd8771347d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 624317b011ba96041be6e0968706c619, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 037a751e9f3958347b6d8aa56fd178b2, type: 2}

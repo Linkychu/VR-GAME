@@ -48,8 +48,11 @@ public class ObjectPhysics : MonoBehaviour
 
         if (_flammable.onFire == true)
         {
+            _renderer.material.color = initialColour;
+            frozen = false;
             _renderer.material.color = Color.red;
             cubeHealth.EnemyDamage(firedps);
+            
             StartCoroutine(ResetFireColour());
         }
 
@@ -60,6 +63,7 @@ public class ObjectPhysics : MonoBehaviour
 
         if (_freezable.Frozen)
         {
+            _renderer.material.color = initialColour;
             Ice();
             cubeHealth.EnemyDamage(dps);
         }
@@ -89,6 +93,7 @@ public class ObjectPhysics : MonoBehaviour
 
     void Ice()
     {
+        
         rb.velocity = new Vector3(0, 0, 0);
         _renderer.material.color = Color.cyan;
         frozen = true;
