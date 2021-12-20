@@ -19,10 +19,14 @@ public class IceEffect : MonoBehaviour
     private float numberOfIceBlocks;
     private SystemicProperties _systemicProperties;
     public bool FreezeWater;
+    private AudioSource _audioSource;
+    public AudioClip iceEffect;
+    public GameObject water;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     
@@ -43,11 +47,13 @@ public class IceEffect : MonoBehaviour
             if (other.gameObject.CompareTag("Water"))
             {
                 FreezeWater = true;
+                _audioSource.clip = iceEffect;
             }
 
 
             if (other.gameObject.CompareTag("Fire"))
             {
+                Instantiate(water, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 
             }
@@ -62,7 +68,15 @@ public class IceEffect : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fire"))
         {
+            
             Destroy(gameObject);
+            
+        }
+
+        if (other.gameObject.CompareTag("Water"))
+        {
+            FreezeWater = true;
+            _audioSource.clip = iceEffect;
         }
     }
 }

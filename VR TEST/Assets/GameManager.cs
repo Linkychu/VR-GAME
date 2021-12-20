@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject EnemiesSpawn;
     private FollowPlayer cubeAI;
-    
+    private bool paused;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,18 @@ public class GameManager : MonoBehaviour
     }
     public void Pause(InputAction.CallbackContext callbackContext)
     {
-        Time.timeScale = 0;
+        if (!paused)
+        {
+            Time.timeScale = 0;
+            paused = true;
+        }
+
+        else
+        {
+            Time.timeScale = 1;
+            paused = false;
+        }
+        
         
     }
 

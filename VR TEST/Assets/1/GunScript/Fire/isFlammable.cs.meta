@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - fireObject: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+  - flameclip: {fileID: 8300000, guid: eaaf4ba2bc0e152498389000125e35b6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

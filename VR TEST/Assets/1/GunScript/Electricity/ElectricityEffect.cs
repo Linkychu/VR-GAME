@@ -12,14 +12,18 @@ public class ElectricityEffect : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] public float explosionForce;
     [SerializeField] private GameObject electricityExplosion;
+
+    private SystemicProperties _systemicProperties;
     public bool Player;
     private Collider _collider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
 
     }
+    
+
 
     // Update is called once per frame
     private void OnCollisionEnter(Collision other)

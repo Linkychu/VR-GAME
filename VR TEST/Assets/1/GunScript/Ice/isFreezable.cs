@@ -20,12 +20,23 @@ public class isFreezable : MonoBehaviour
     public float doubleIceSeconds;
     public float seconds;
     private float fireSeconds = 0.1f;
+    public GameObject water;
+
+    private Renderer _renderer;
     
     
 
     private SystemicProperties _systemicProperties;
 
     private isFlammable _flammable;
+
+    private Material mat;
+
+    private Renderer rendererinChildren;
+
+    private Color originalcolour;
+    
+    private Color originalcolourC;
 
     public bool isWater;
     // Start is called before the first frame update
@@ -38,6 +49,13 @@ public class isFreezable : MonoBehaviour
         seconds = iceSeconds;
         Frozen = false;
         _flammable = GetComponent<isFlammable>();
+        _renderer = GetComponent<Renderer>();
+
+        mat = _renderer.material;
+        
+       rendererinChildren = GetComponentInChildren<Renderer>();
+       originalcolour = _renderer.material.color;
+       originalcolourC = rendererinChildren.material.color;
 
     }
 
@@ -71,11 +89,15 @@ public class isFreezable : MonoBehaviour
         {
             if (!Frozen && _flammable.onFire != true)
             {
+              
+                
                 FreezeObject();
                 StartCoroutine(IceTimer());
             }
             
         }
+        
+        
         
         
 
@@ -87,6 +109,11 @@ public class isFreezable : MonoBehaviour
                 Frozen = false;
                 Destroy(Ice);
                 rb.constraints = RigidbodyConstraints.None;
+                Instantiate(water, transform.position, Quaternion.identity);
+                rb.WakeUp();
+                rb.isKinematic = false;
+
+                
             }
         }
         
@@ -97,14 +124,16 @@ public class isFreezable : MonoBehaviour
     void FreezeObject()
     {
    
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.isKinematic = true;
+        rb.Sleep();
+        
         Ice = Instantiate(IceBlock, transform.position, transform.rotation);
         Collider IceCollider = Ice.GetComponent<Collider>();
         Frozen = true;
         Ice.transform.parent = gameObject.transform;
         Ice.transform.localScale = gameObject.transform.localScale * 2;
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-        rb.isKinematic = true;
-        rb.Sleep();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -121,6 +150,8 @@ public class isFreezable : MonoBehaviour
                 Frozen = false;
                 Destroy(Ice);
                 rb.constraints = RigidbodyConstraints.None;
+                rb.WakeUp();
+                rb.isKinematic = false;
             }
         }
         
@@ -134,6 +165,8 @@ public class isFreezable : MonoBehaviour
         Frozen = false;
         rb.constraints = RigidbodyConstraints.None;
         rb.isKinematic = false;
+        _renderer.material.color = originalcolour;
+        rendererinChildren.material.color = originalcolourC;
         rb.WakeUp();
 
     }

@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private LayerMask Ground;
     private float radius;
 
-    private bool isGrounded => 
+
+    public AudioSource jump;
+    public bool isGrounded => 
     Physics.CheckSphere(groundCheck.transform.position, 1.1f, Ground);
     void Start()
     {
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!isGrounded) return;
         rb.AddForce((Vector3.up * jumpForce));
+        jump.Play();
     }
 
     private void OnCollisionEnter(Collision other)

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Bolt;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
@@ -46,14 +45,21 @@ public class SystemicProperties : MonoBehaviour
    public GameObject snowflake;
 
 
+   private AudioSource _source;
+   public AudioClip heat;
+   public AudioClip tornado;
    private Vector3 spawnCoords;
 
    public int Temperature;
-    // Start is called before the first frame update
+
+   public AudioClip lightningClip;
+
+   // Start is called before the first frame update
     void Start()
     {
         Spawn = false;
         count = 0;
+        _source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -193,6 +199,8 @@ public class SystemicProperties : MonoBehaviour
             windOriginPos = windOrigin.transform.position;
             windOriginPos = spawnCoords;
             windCopy = (GameObject) Instantiate(wind, windOriginPos, Quaternion.identity);
+            _source.clip = tornado;
+            _source.Play();
             StartCoroutine(WindSeconds());
 
 
@@ -204,7 +212,9 @@ public class SystemicProperties : MonoBehaviour
                 rainW.Stop();
                 Rng = Random.Range(0, 4);
                 Seed = Random.Range(0, 101);
+                _source.clip = null;
                 StartCoroutine(Reset());
+                
                 
             }
         }
@@ -214,6 +224,8 @@ public class SystemicProperties : MonoBehaviour
     {
         RenderSettings.skybox = Sun;
         sun = true;
+        _source.clip = heat;
+        _source.Play();
         StartCoroutine(Reset());
 
     }
@@ -241,9 +253,12 @@ public class SystemicProperties : MonoBehaviour
         RenderSettings.skybox = Thunder;
         rain.SetActive(true);
         rainW.Play();
+        _source.clip = lightningClip;
 
+        _source.loop = false;
+        _source.Play();
 
-        lightningCopy = Instantiate(lightning, spawnCoords, quaternion.identity);
+        lightningCopy = Instantiate(lightning, spawnCoords, Quaternion.identity);
 
         StartCoroutine(LightningReset());
 
@@ -275,12 +290,15 @@ public class SystemicProperties : MonoBehaviour
         thunder = false;
         Temperature = 0;
         Spawn = false;
+        _source.loop = true;
+        _source.Stop();
         yield return new WaitForSeconds(timer * 2);
         count = 0;
         SeedFinder();
         rain.SetActive(false);
         rainW.Stop();
-        
-                    
+        _source.clip = null;
+
+
     }
 }

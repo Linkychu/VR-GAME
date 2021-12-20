@@ -24,6 +24,11 @@ public class ObjectPhysics : MonoBehaviour
     private SystemicProperties _systemicProperties;
     private isFreezable _freezable;
 
+
+    private float electricityTimer;
+    private float electricityTimerN = 6;
+
+    private float electricityTimerD;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,6 +41,10 @@ public class ObjectPhysics : MonoBehaviour
         _flammable = GetComponent<isFlammable>();
         _freezable = GetComponent<isFreezable>();
         _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
+
+        electricityTimer = electricityTimerN;
+        electricityTimerD = electricityTimerN * 2;
+
     }
 
     // Update is called once per frame
@@ -66,6 +75,19 @@ public class ObjectPhysics : MonoBehaviour
             _renderer.material.color = initialColour;
             Ice();
             cubeHealth.EnemyDamage(dps);
+            
+            
+        }
+
+
+        if (_systemicProperties.lightning == true)
+        {
+            electricityTimer = electricityTimerD;
+        }
+
+        else
+        {
+            electricityTimer = electricityTimerN;
         }
     }
 
@@ -82,7 +104,7 @@ public class ObjectPhysics : MonoBehaviour
 
     IEnumerator ShockTimer()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(electricityTimer);
         rb.constraints = RigidbodyConstraints.None;
         rb.WakeUp();
         rb.isKinematic = false;

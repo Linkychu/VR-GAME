@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class isFlammable : MonoBehaviour
 {
     public bool onFire;
@@ -11,9 +12,16 @@ public class isFlammable : MonoBehaviour
     [SerializeField] private GameObject fireObject;
     private GameObject fire;
     private SystemicProperties _systemicProperties;
+    public AudioClip flameclip;
+    private AudioSource flameSound;
+    private bool onWater;
     void Start()
     {
         _systemicProperties = GameObject.FindWithTag("GameManager").GetComponent<SystemicProperties>();
+        flameSound = GetComponent<AudioSource>();
+        flameSound.playOnAwake = false;
+        flameSound.clip = flameclip;
+
     }
 
     // Update is called once per frame
@@ -22,6 +30,14 @@ public class isFlammable : MonoBehaviour
         if (onFire)
         {
             fire.transform.position = gameObject.transform.position;
+            flameSound.Play();
+        }
+
+        if (onWater)
+        {
+            StartCoroutine(Water());
+            Destroy(fire);
+            onFire = false;
         }
 
         // if (_systemicProperties.Temperature > 500)
@@ -62,26 +78,57 @@ public class isFlammable : MonoBehaviour
 
        if (other.gameObject.CompareTag("Water"))
        {
+           onWater = true;
            StartCoroutine(Water());
        }
        
 
     }
 
-        public void FireInstantiate()
+    private void OnCollisionStay(Collision other)
     {
-        
-        fire = Instantiate(fireObject, gameObject.transform.position,Quaternion.identity);
-        fire.transform.localScale = gameObject.transform.localScale * 4f;
-        onFire = true;
-        fire.transform.parent = gameObject.transform;
-        StartCoroutine(FireTimer());
+        if (other.gameObject.CompareTag("Water"))
+        {
+            onWater = true;
+        }
+
+        else
+        {
+            onWater = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("Water"))
+        {
+            onWater = true;
+        }
+
+        else
+        {
+            onWater = false;
+        }
+    }
+
+    public void FireInstantiate()
+    {
+        if (!onWater)
+        {
+            fire = Instantiate(fireObject, gameObject.transform.position, Quaternion.identity);
+            flameSound.Play();
+            fire.transform.localScale = gameObject.transform.localScale * 4f;
+            onFire = true;
+            fire.transform.parent = gameObject.transform;
+            StartCoroutine(FireTimer());
+        }
     }
 
     IEnumerator FireTimer()
     {
         yield return new WaitForSeconds(fireSeconds);
         onFire = false;
+        flameSound.Stop();
         Destroy(fire);
     }
 
@@ -90,5 +137,6 @@ public class isFlammable : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         Destroy(fire);
         onFire = false;
+        
     }
 }

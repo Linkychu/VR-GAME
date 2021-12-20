@@ -3,7 +3,13 @@ guid: d6fc4b9aeed7cb8429e692fc92b83502
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - iceBlock: {instanceID: 0}
+  - _iceBlock: {instanceID: 0}
+  - objectCol: {instanceID: 0}
+  - objectRb: {instanceID: 0}
+  - iceEffect: {instanceID: 0}
+  - water: {fileID: 8621703356920459583, guid: cfd6e6d0224f3a7479e2aa690d52ff5d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
