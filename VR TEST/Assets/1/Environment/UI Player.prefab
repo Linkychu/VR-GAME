@@ -2894,6 +2894,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 0
+  jump: {fileID: 0}
 --- !u!114 &7005128584576630706
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class FollowPlayer : MonoBehaviour
         target = player.GetComponent<Transform>();
         _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        moveSpeed = moveSpeed + (_gameManager.waveCount);
+        moveSpeed = moveSpeed + (_gameManager.waveCount / 2 );
 
         _freezable = GetComponent<isFreezable>();
 
